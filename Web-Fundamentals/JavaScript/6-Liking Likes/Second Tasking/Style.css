@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Containor {
+    margin: 0vh 5vh 0vh 5vh;
+    display: flex;
+    position: relative;
+    justify-items:space-evenly;
+
+}
+
+/* ------------ */
+/* navbar */
+/* ------------ */
+.navbar {
+    height: 5vh;
+    background-color: black;
+    color: white;
+    padding: 2.5vh 2vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ------------ */
+/* rightContain */
+/* ------------ */
+
+.rightContain {
+    border: 2px solid black;
+    background-color: rgb(243, 239, 234);
+    padding: 20px;
+    margin: 10px 10px auto 10px;
+}
+
+.upper {
+
+    display: flex;
+    position: relative;
+    align-content: flex-end;
+    padding: 10px;
+    justify-content: space-evenly
+}
+
+.upper button {
+    width: 60px;
+    height: 30px;
+
+}
+
+.downer p {
+    display: block;
+}
+
+button {
+    box-shadow: 2px 1px black;
+    background-color: gold;
+}
+
+#idh {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* leftContain */
+
+.leftContain {
+    border: 2px solid black;
+    height: 200px;
+    padding: 5px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.leftContain > h2 {
+    padding: 5px;
+}
