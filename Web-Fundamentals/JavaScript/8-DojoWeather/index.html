@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DojoWeather</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+
+  <body>
+    <header class="containor">
+      <h1>DojoWeather</h1>
+      <nav class="navbar">
+        <ul class="nav_links">
+          <li><a href="#" onclick="massageAlert0()">Burbank</a></li>
+          <li><a href="#" onclick="massageAlert1()">Chicago</a></li>
+          <li><a href="#" onclick="massageAlert2()">Dallas</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="top_bar">
+      <div class="top_bar_left">
+        <h1>San Jose</h1>
+      </div>
+      <div class="top_bar_right">
+        <p>show temperature in</p>
+        <select class="temp">
+          <option value="C">C</option>
+          <option value="F" onclick="tempChange()">F</option>
+        </select>
+      </div>
+    </section>
+
+    <hr class="hrBold" />
+
+    <section class="content">
+      <div>
+        <h1>Today</h1>
+        <img src="assets/some_rain.png" alt="some_rain" />
+        <p>some rain</p>
+        <div class="cf_number">
+          <h3 class="h3blue">24</h3>
+          <h3 class="h3red">18</h3>
+        </div>
+      </div>
+
+      <div>
+        <h1>Tomorrow</h1>
+        <img src="assets/some_sun.png" alt="some_sun" />
+        <p>some sun</p>
+        <div class="cf_number">
+          <h3 class="h3blue">27</h3>
+          <h3 class="h3red">19</h3>
+        </div>
+      </div>
+
+      <div>
+        <h1>Friday</h1>
+        <img src="assets/some_clouds.png" alt="some_clouds" />
+        <p>some clouds</p>
+        <div class="cf_number">
+          <h3 class="h3blue">21</h3>
+          <h3 class="h3red">16</h3>
+        </div>
+      </div>
+
+      <div>
+        <h1>Sunurday</h1>
+        <img src="assets/some_sun.png" alt="some_sun" />
+        <p>some sun</p>
+        <div class="cf_number">
+          <h3 class="h3blue">26</h3>
+          <h3 class="h3red">21</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <ul>
+        <li><img src="assets/cookie.png" alt="cookie" /></li>
+
+        <li>
+          <h3>Stop! Cookie time</h3>
+          <p>
+            We use cookies (sadly not the edible ones) to personalize content
+            and ads to provide social media features and to analyse our
+            traffic.<a href="#">Read more...</a>
+          </p>
+        </li>
+
+        <li><button onclick="btnRomve()">I Accept</button></li>
+      </ul>
+    </section>
+    <script src="Jsp.js"></script>
+  </body>
+</html>

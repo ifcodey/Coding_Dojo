@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&family=Roboto&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: black;
+  
+}
+
+li,
+a,
+button {
+  font-family: "Comfortaa", cursive;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 10px;
+  background-color: #9fc5f8;
+}
+
+header > h1 {
+  cursor: pointer;
+  color: #e6e9ec;
+  font-family: "Comfortaa", cursive;
+}
+
+.nav_links li {
+  list-style: none;
+  padding: 0px 20px;
+  display: inline-block;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+.top_bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 15%;
+}
+.top_bar_right {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto 5px;
+}
+.top_bar_left > h1 {
+  font-family: "Comfortaa", cursive;
+}
+hr .hrBold {
+  border-top: 20px solid black;
+  border-radius: 5px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 40px;
+}
+.content div img {
+  width: 73%;
+  justify-items: center;
+  align-self: center;
+  border: 1px solid #e6e9ec;
+  background-color: #e6e9ec;
+  border-radius: 50%;
+}
+.content div,
+.content h1 {
+  background-color: #eeeeee;
+  align-items: center;
+  padding: 5px;
+  margin-top: 15px;
+  text-align: center;
+}
+.cf_number {
+  display: flex;
+  justify-content: space-between;
+}
+.h3blue {
+  color: #1d2fd4;
+}
+.h3red {
+  color: #c92d35;
+}
+.footer p {
+  text-align: center;
+}
+
+.footer > li,
+.footer > a,
+button {
+  font-family: "Comfortaa", cursive;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+.footer li {
+  list-style: none;
+  padding: 0px 20px;
+  display: inline-block;
+}
+.footer ul {
+  display: flexbox;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  box-shadow: 2px 1px black;
+  width: fit-content;
+  margin: 10px 40px;
+  position: fixed;
+}
+.footer button {
+  background-color: #9fc5f8;
+  border: 2px solid black;
+  box-shadow: 2px 1px black;
+  font-family: "Comfortaa", cursive;
+  margin-bottom: 10px;
+}
