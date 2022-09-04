@@ -13,9 +13,9 @@
       <h1>DojoWeather</h1>
       <nav class="navbar">
         <ul class="nav_links">
-          <li><a href="#" onclick="massageAlert0()">Burbank</a></li>
-          <li><a href="#" onclick="massageAlert1()">Chicago</a></li>
-          <li><a href="#" onclick="massageAlert2()">Dallas</a></li>
+          <li><a href="#" onclick="massageAlert('Burbank')">Burbank</a></li>
+          <li><a href="#" onclick="massageAlert('Chicago')">Chicago</a></li>
+          <li><a href="#" onclick="massageAlert('Dallas')">Dallas</a></li>
         </ul>
       </nav>
     </header>
@@ -26,9 +26,9 @@
       </div>
       <div class="top_bar_right">
         <p>show temperature in</p>
-        <select class="temp">
-          <option value="C">C</option>
-          <option value="F" onclick="tempChange()">F</option>
+        <select name="temp" id="temp" onchange="tempChange()">
+          <option value="C" id="C">C</option>
+          <option value="F" id="F">F</option>
         </select>
       </div>
     </section>

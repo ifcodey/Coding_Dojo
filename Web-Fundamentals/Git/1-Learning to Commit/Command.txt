@@ -1,0 +1,169 @@
+command lines
+--------------
+
+Codey@Ifcodey MINGW64 ~/Desktop/test
+$ git init
+Initialized empty Git repository in C:/Users/Codey/Desktop/test/.git/
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ ls
+Style.css  index.html
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "done"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Style.css
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "update.html"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Style.css
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "update.css"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Style.css
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Style.css
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git add .
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "update.html"
+[master (root-commit) c4f3e4a] update.html
+ 2 files changed, 20 insertions(+)
+ create mode 100644 Style.css
+ create mode 100644 index.html
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "update.css"
+On branch master
+nothing to commit, working tree clean
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git log
+commit c4f3e4a02e092cc88264fe213e793c3f4555a9cb (HEAD -> master)
+Author: Ahmed_Shalash <ifcodey@gmail.com>
+Date:   Sun Sep 4 11:33:43 2022 +0300
+
+    update.html
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "done.css"
+On branch master
+nothing to commit, working tree clean
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$
+
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git clone https://github.com/ifcodey/My_Project.git
+Cloning into 'My_Project'...
+fatal: helper error (-1): User cancelled dialog.
+error: unable to read askpass response from 'C:/Program Files/Git/mingw64/bin/git-askpass.exe'
+Username for 'https://github.com':
+error: unable to read askpass response from 'C:/Program Files/Git/mingw64/bin/git-askpass.exe'
+Password for 'https://github.com':
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/ifcodey/My_Project.git/'
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git add .
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git commit -m "done"
+On branch master
+nothing to commit, working tree clean
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git log
+commit c4f3e4a02e092cc88264fe213e793c3f4555a9cb (HEAD -> master)
+Author: Ahmed_Shalash <ifcodey@gmail.com>
+Date:   Sun Sep 4 11:33:43 2022 +0300
+
+    update.html
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ ^C
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git revert <done>
+bash: syntax error near unexpected token `newline'
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git revert <"done">
+bash: syntax error near unexpected token `newline'
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git revert <NGW64 ~/Desktop/test (master)
+$ git revert <^C[C>
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `newline'
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master)
+$ git revert -n HEAD
+
+Codey@Ifcodey MINGW64 ~/Desktop/test (master|REVERTING)
+$
