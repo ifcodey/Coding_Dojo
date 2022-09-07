@@ -1,0 +1,76 @@
+1- Query : Create 3 new users
+-------------------------------
+
+-- INSERT INTO table_name (column1, column2, column3, ...)
+-- VALUES (value1, value2, value3, ...);
+
+insert into user (first_name,last_name)
+values('Ahmed','Shalash');
+
+insert into user (first_name,last_name)
+values('Omar','Shalash');
+
+insert into user (first_name,last_name)
+values('Mohammaduser','Shalash');
+
+-------------------------------
+2- Query : Retrieve all the users
+-------------------------------
+
+select * from user
+
+-------------------------------
+3- Query : Retrieve all the users
+-------------------------------
+
+select * from user
+
+-------------------------------
+4- Query: Retrieve the first user using their email address
+-------------------------------
+
+update user set email ="ifcodey@gmail.com" where id=1;
+update user set email ="microman@gmail.com" where id=2;
+update user set email ="babyman@gmail.com" where id=3;
+
+select * from user
+
+-------------------------------
+5- Query: Retrieve the last user using their id
+-------------------------------
+
+select * from user where id = 4;
+
+-------------------------------
+6- Query: Change the user with id=3 so their last name is Pancakes
+-------------------------------
+
+update user set last_name ='Pancakes' where id = 3;
+select * from user;
+
+-------------------------------
+7- Query: Delete the user with id=2 from the database
+-------------------------------
+
+ delete from user where id = 2; 
+
+-------------------------------
+8- Query: Get all the users, sorted by their first name
+-------------------------------
+
+select * from user order by first_name;
+
+-------------------------------
+9- Query: Get all the users, sorted by their first name
+-------------------------------
+
+select * from user order by first_name;
+
+-------------------------------
+9- BONUS Query: Get all the users, sorted by their first name in descending order
+-------------------------------
+
+select * from user order by first_name DESC;
+
+-------------------------------
+

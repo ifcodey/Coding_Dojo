@@ -1,0 +1,63 @@
+1- Query: Create 3 new dojos
+-------------------------------
+
+insert into dojos(name)
+value ('Ahmed'),('Yazan'),('Baseem');
+
+-------------------------------
+2- Query: Delete the 3 dojos you just created
+-------------------------------
+
+delete from dojos;
+
+-------------------------------
+3- Query: Create 3 more dojos
+-------------------------------
+
+INSERT INTO dojos (name)
+VALUES ('Ahmed');
+
+INSERT INTO dojos (name)
+VALUES ('Ali');
+
+INSERT INTO dojos (name)
+VALUES ('shalash');
+-------------------------------
+4- Query: Create 3 ninjas that belong to the first dojo
+-------------------------------
+
+insert into ninja (first_name,last_name,age,dojo_id)
+values ('Yazen' ,'tama',19,5),('mazen' ,'rolle',20,5),('fada' ,'opena',22,5);
+
+-------------------------------
+5- Query: Create 3 ninjas that belong to the second dojo
+-------------------------------
+
+
+insert into ninja (first_name,last_name,age,dojo_id)
+values ('devied' ,'semoin',19,6),('jon' ,'mart',20,6),('mohammad' ,'ali',22,6);
+
+-------------------------------
+6-Query: Create 3 ninjas that belong to the third dojo
+-------------------------------
+
+insert into ninja (first_name,last_name,age,dojo_id)
+values ('devied' ,'semoin',19,7),('jon' ,'mart',20,7),('mohammad' ,'ali',22,7);
+
+-------------------------------
+7-Query: Retrieve all the ninjas from the first dojo
+-------------------------------
+
+select * from ninjas where dojo_id = 5;
+
+-------------------------------
+8-Query: Retrieve all the ninjas from the last dojo
+-------------------------------
+
+select * from ninjas where dojo_id = 7;
+
+-------------------------------
+9-Query: Retrieve the last ninja's dojo
+-------------------------------
+
+select * from ninjas join dojos on dojos.id = dojo_id; 
