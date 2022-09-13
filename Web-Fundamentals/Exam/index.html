@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlushStar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- The header part -->
+    <header>
+        <!-- The fix Bar -->
+        <div id="fixed_upperbar">
+            <p>FREE PHONE GROP ON SELECT PURCHASES</p>
+        </div><br>
+
+        <!-- The Nav Bar -->
+        <nav class="nav_bar0">
+            <div>
+                <h1>PlushStar</h1>
+            </div>
+            <div><input type="search" name="searchname" placeholder="Search For ..." id="searchbox"></div>
+            <div id="imgcartdiv"><span id="product_num0">0</span><img src="images/cart-dark.png" alt="This is a cart dark" id="imgcart">
+            </div>
+        </nav>
+        <nav class="nav_bar">
+            <a href="#">
+                <p>Home</p>
+            </a>
+            <a href="#">
+                <p>New</p>
+            </a>
+            <a href="#" id="productborder">
+                <p>Product</p>
+            </a>
+            <a href="#">
+                <p>Sales</p>
+            </a>
+            <a href="#">
+                <p>Blog</p>
+            </a>
+            <a href="#">
+                <p onclick="contact_Us(this)">Contact Us</p>
+            </a>
+        </nav>
+    </header>
+    <!-- The section part -->
+    <section>
+        <div id="titlestore">
+            <div>
+                <h1>Plushy Store</h1>
+            </div>
+        </div>
+        <div id="select_bar">
+            <div><span id="product_num1">62 </span>Products , sorted by <span id="Select_Op"><b>Best Selling</b></span></div>
+            <div>
+                <span>Sort By</span>
+                <select id="List_choose" onchange="List_choose()">
+                    <option  value="Best_Selling">Best Selling</option>
+                    <option  value="Price">Price</option>
+                </select>
+            </div>
+        </div>
+        <!-- Box Section -->
+        <div id="boxes_items">
+            <div class="boxe_item">
+                <img src="images/product-image.png" alt="This products of items">
+                <br>
+                <p class="b_bold">Mischief Mouse</p><br>
+                <button class="Buy" onclick="Buy(this)">Buy</button>
+            </div>
+            <div class="boxe_item">
+                <img src="images/product-image.png" alt="This products of items">
+                <br>
+                <p class="b_bold">Shy Shrew</p><br>
+                <button class="Buy" onclick="Buy(this)">Buy</button>
+            </div>
+            <div class="boxe_item">
+                <img src="images/product-image.png" alt="This products of items">
+                <br>
+                <p class="b_bold">Hangry Hamster</p><br>
+                <button class="Buy" onclick="Buy(this)">Buy</button>
+            </div>
+            <div class="boxe_item">
+                <img src="images/product-image.png" alt="This products of items">
+                <br>
+                <p class="b_bold">Chilly Chinchilla</p><br>
+                <button class="Buy" onclick="Buy(this)">Buy</button>
+            </div>
+
+        </div>
+    </section>
+    <script src="js.js"></script>
+</body>
+
+
+</html>
