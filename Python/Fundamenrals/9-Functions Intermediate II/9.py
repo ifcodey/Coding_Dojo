@@ -1,137 +1,97 @@
-# Biggie Size
-# def biggieSize(Arr):
-#     newList = []
-#     for x in range(len(Arr)):
-#         if Arr[x] > 0:
-#             newList.append("big")
-#         else:
-#             newList.append(Arr[x])
-#     return newList
+
+#1 Update Values in Dictionaries and Lists
+# ---------------------------------------------
+
+x = [ [5,2,3], [10,8,9] ] 
+students = [
+     {'first_name':  'Michael', 'last_name' : 'Jordan'},
+     {'first_name' : 'John', 'last_name' : 'Rosales'}
+]
+
+sports_directory = {
+'basketball' : ['Kobe', 'Jordan', 'James', 'Curry']
+,'soccer' : ['Messi', 'Ronaldo', 'Rooney']
+}
+z = [ {'x': 10, 'y': 20} ]
+
+x[1][0] = 15
+print(x)
+
+students [0]['last_name'] = "Bryant"
+print(students)
+
+sports_directory ['soccer'][0] = "Andres"
+print(sports_directory)
+
+z[0]['y'] =30
+print(z)
 
 
-# print(biggieSize([-1, 3, 5, -5]))
+#2 Iterate Through a List of Dictionaries
+# ---------------------------------------------
 
-# --------------------------------------
+students = [
+     {'first_name':  'Michael', 'last_name' : 'Jordan'},
+     {'first_name' : 'John', 'last_name' : 'Rosales'},
+     {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+     {'first_name' : 'KB', 'last_name' : 'Tonel'}
+     ]
 
-# Count Positives
-# def counter(Arr):
-#     z = 0
-#     for x in range(len(Arr)):
-#         if Arr[x] > 0:
-#             z += 1
-#     Arr.pop()
-#     Arr.append(z)
-#     return Arr
-
-# print(counter([-1, 1, 1, 1]))
-# print(counter([1,6,-4,-2,-7,-2]))
-
-# --------------------------------------
-
-# Sum Total
-# def sum_total(arr):
-#     sum = 0
-#     for x in range(len(arr)):
-#         sum += arr[x]
-#     return sum
+def iterateDictionary(some_list):
+     for x in range(len(some_list)):
+          print(f"First name - {some_list[x]['first_name']} Last Name- {some_list[x]['last_name']}")
 
 
-# print(sum_total([1, 2, 3, 4]))
-# print(sum_total([6,3,-2]))
+iterateDictionary(students) 
 
-# --------------------------------------
+#3 Get Values From a List of Dictionaries
+# ---------------------------------------------
+inp = input("Choose : 1- first_name or 2- last_name:\n")
+students = [
+     {'first_name':  'Michael', 'last_name' : 'Jordan'},
+     {'first_name' : 'John', 'last_name' : 'Rosales'},
+     {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+     {'first_name' : 'KB', 'last_name' : 'Tonel'}
+     ]
 
-# Average
-# def Average(arr):
-#     sum = 0
-#     Avg = 0
-#     for x in range(len(arr)):
-#         sum += arr[x]
-#     Avg = sum/len(arr)
-#     return Avg
+try:
+     def iterateDictionary( keys , some_list ):
+          for x in range(len(some_list)):
+               print(f"{some_list[x][keys]}")
 
-
-# print(Average([1, 2, 3, 4]))
-
-# --------------------------------------
-
-# Length
-# def length(arr):
-#     count = 0
-#     for x in range(len(arr)):
-#         count += 1
-#     return count
-# print(length([37,2,1,-9]))
-# print(length([]))
-
-# --------------------------------------
-
-# Minimum
-# def minimum(arr):
-#     min = 0
-#     if len(arr) == 0:
-#         return 0
-#     else:
-#         for x in range(len(arr)):
-#             if min > arr[x]:
-#                 min = arr[x]
-#                 return min
+except:
+     print("Error in value you enter it")
 
 
-# print(minimum([37, 2, 1, -9]))
-# print(minimum([]))
+iterateDictionary(inp,students) 
 
-# --------------------------------------
+# ---------------------------------------------
+# Other Solution for 3
+# def iterateDictionary2(key_name, some_list):
+#     if key_name=='first_name':
+#         for i in range(len(some_list)):
+#             print(some_list[i][key_name])
+#     elif key_name=='last_name':
+#         for i in range(len(some_list)):
+#             print(some_list[i][key_name])
+# ---------------------------------------------
 
-# Maximum
-# def maximum(arr):
-#     max = 0
-#     if len(arr) == 0:
-#         return 0
-#     else:
-#         for x in range(len(arr)):
-#             if max < arr[x]:
-#                 max = arr[x]
-#                 return max
+#4 Iterate Through a Dictionary with List Values
+# ---------------------------------------------
+dojo = {
+   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+def printInfo(dojo):
 
-# print(maximum([37, 2, 1, -9]))
-# print(maximum([]))
+    print(len(dojo['locations']), "locations\n------------")
+    for locat in dojo['locations']:
+        print(locat)
 
-# --------------------------------------
+    print("\n",len(dojo['instructors']), "instructors\n------------")
+    for instruc in dojo['instructors']:
+       print(instruc)
 
-# Ultimate Analysis
-# def Ultimate(arr):
-#     sum = 0
-#     Avg = 0
-#     count = 0
-#     min = 0
-#     max = 0
-
-#     for x in range(len(arr)):
-#         sum += arr[x]
-#         count += 1
-#     Avg = sum/len(arr)
-#     if len(arr) == 0:
-#         return 0
-#     else:
-#         for x in range(len(arr)):
-#             if min > arr[x]:
-#                 min = arr[x]
-#             if max < arr[x]:
-#                 max = arr[x]
-
-#     return sum, Avg,min,max,count
+printInfo(dojo)
 
 
-# print(Ultimate([37, 2, 1, -9]))
-
-# --------------------------------------
-
-# Reverse List
-# def reverseList(arr):
-#     newlist = []
-#     for x in range(len(arr)):
-#         newlist.append(arr[(len(arr) - x)-1])
-#     return newlist
-
-# print(reverseList([37,2,1,-9]))
