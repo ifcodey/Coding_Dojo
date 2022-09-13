@@ -16,7 +16,7 @@ balance is :{self.balance}")
 
     def transfer_money(self, User_2, amount):
         self.balance -= amount
-        self.User_2 += amount
+        User_2.balance += amount
 
 
 U1 = Users(150, "Marah")
@@ -43,3 +43,4 @@ U3.make_withdrawal(500)
 U3.display_user()
 
 U1.transfer_money(U3, 150)
+U3.display_user()
