@@ -1,0 +1,85 @@
+1- Query: Create 6 new users
+-------------------------------
+insert into users (first_name ,last_name ,created_at ,updated_at)
+values 
+('Ahmed','Shalash',curdate(),curdate()),
+('Mohammad','Shalash',curdate(),curdate()),
+('Zaki','Ror',curdate(),curdate()),
+('wallam','tahan',curdate(),curdate()),
+('dana','dora',curdate(),curdate()),
+('rabeh','nora',curdate(),curdate());
+
+-------------------------------
+2- Query: Have user 1 be friends with user 2, 4 and 6
+-------------------------------
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (1,2,curdate(),curdate()) , (1,4,curdate(),curdate()) , (1,6,curdate(),curdate())  ;
+
+-------------------------------
+3- Query: Have user 2 be friends with user 1, 3 and 5
+-------------------------------
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (2,1,curdate(),curdate()) , (2,3,curdate(),curdate()) , (2,5,curdate(),curdate())  ;
+
+-------------------------------
+4- Query: Have user 3 be friends with user 2 and 5
+-------------------------------
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (3,2,curdate(),curdate()) , (3,5,curdate(),curdate()) ;
+select * from friendship;
+
+-------------------------------
+5- Query: Have user 4 be friends with user 3
+-------------------------------
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (4,3,curdate(),curdate()) , (5,1,curdate(),curdate()) ,(5,6,curdate(),curdate()) ;
+
+-------------------------------
+6-Query: Have user 5 be friends with user 1 and 6
+-------------------------------
+
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (4,3,curdate(),curdate()) , (5,1,curdate(),curdate()) ,(5,6,curdate(),curdate()) ;
+
+-------------------------------
+7-Query: Have user 6 be friends with user 2 and 3
+-------------------------------
+insert into friendship(user_id, friend_id ,created_at ,updated_at)
+values (6,2,curdate(),curdate()) , (6,3,curdate(),curdate())  ;
+
+-------------------------------
+8-Query: Display the relationships create as shown in the above image
+-------------------------------
+select users.first_name, users.last_name, users2.first_name as friend_first_name,
+users2.last_name as friend_last_name from users join
+friendship on users.id = friendship.user_id join users as users2 on users2.id = friendship.friend_id; 
+
+-------------------------------
+9-NINJA Query: Return all users who are friends with the first user, make sure their names are displayed in results.
+-------------------------------
+select users.first_name, users.last_name, users2.first_name as friend_first_name,
+users2.last_name as friend_last_name from users join
+friendship on users.id = friendship.user_id join users as users2 on users2.id = friendship.friend_id
+where users.id =1; 
+
+-------------------------------
+10-NINJA Query: Return the count of all friendships
+-------------------------------
+select count(id) from friendship;
+or
+select count(id) from friendship;
+
+-------------------------------
+11-NINJA Query: Find out who has the most friends and return the count of their friends.
+-------------------------------
+ select first_name , last_name , count(users.id) as numberOfFriend from users 
+join friendship on users.id = friendship.user_id group by users.id order by
+numberOfFriend desc limit 1;
+
+
+-------------------------------
+12-NINJA Query: Return the friends of the third user in alphabetical order
+
+
+
+-------------------------------
