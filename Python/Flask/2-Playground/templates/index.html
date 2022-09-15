@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+.containor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+h1{
+    text-align: center;
+    white-space: line;
+
+}
+.containor div{
+    height: 200px;
+    width: 200px;
+    border: 2px soild black;
+    margin-top: 20px;
+    background-color: {{color}};
+}
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div class="containor">
+        {% for i in range(0,x): %}
+        <div>
+            {{x}}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
