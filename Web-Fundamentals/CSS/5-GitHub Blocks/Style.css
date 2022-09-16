@@ -1,0 +1,48 @@
+.container {
+    background-color: #eaf5ff;
+    text-align: center;
+    width: fit-content;
+   
+}
+h4 {
+    font-display: light;
+}
+div> img {
+    width: 200px;
+    padding: 50px;
+    margin: 20px;
+
+}
+div {
+    align-items: center;
+}
+.row1 {
+    display: flex;
+    background-color: #54c0ec;
+    margin:10px;
+    justify-content: space-between;
+    width: fit-content;
+   
+     
+    
+}
+.row2 {
+    display: flex;
+    background-color: #fcfcff;
+    margin:10px;
+    justify-content: space-between;
+    width: fit-content;
+    
+}
+.row3 {
+    display: flex;
+    background-color:#d7b3d0;
+    margin:10px;
+    justify-content: center;
+    
+    
+}
+img.octocat {
+    height: 200px;
+}
+

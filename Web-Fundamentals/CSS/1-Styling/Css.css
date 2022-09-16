@@ -1,0 +1,19 @@
+h1 {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+span {
+color:aqua;
+}
+h3 {
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+    
+}
+#linkus {
+    background-color: aqua;
+    text-decoration: underline;
+    text-align-last: right;
+    display: block;
+}

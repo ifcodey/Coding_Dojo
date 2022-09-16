@@ -1,0 +1,26 @@
+#button1 {
+background-color: beige;
+color:royalblue;
+border-radius: 10px;
+border-color:#00ffff;
+padding:5px 25px 5px 25px;
+display: inline-block;
+}
+#button2 {
+    background-color:chartreuse;
+    border-color: chartreuse;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+#button3 {
+    background-color: blue;
+    color: aliceblue;
+    box-shadow: 2px 3px black;
+    padding:7px 15px;
+    display: block;
+    width: 200px;
+    height: 50px;
+
+}
