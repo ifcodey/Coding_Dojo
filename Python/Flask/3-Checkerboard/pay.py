@@ -21,3 +21,5 @@ def board_with_colors(x, y,color_x, color_y):
 
 if __name__ == '__main__':
   app.run(debug=True)
+
+  for 
