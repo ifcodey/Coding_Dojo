@@ -6,24 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
-    <table class="board">
-        {%for i in range(x):%}
-        <tr>
-            {%for j in range(y):%}
-            <td class="panel-y" style=" background-color:  {{color_y or white}};"></td>
-            <td class="panel-x" style=" background-color:  {{color_x or black}};"></td>
-            {%endfor%}
-        </tr>
-        <tr>
-            {%for j in range(y):%}
-            <td class="panel-x" style=" background-color:  {{color_x or black}};"></td>
-            <td class="panel-y" style=" background-color:  {{color_y or white}};"></td>
-            {%endfor%}
-        </tr>
+    {%for x in range(0,row):%}
+    <div class="row">
+        {%for i in range(0,col):%}
+        {%if x%2 == 0%}
+        {%if i%2 == 0%}
+        <div class="white" style=" background-color:  {{color1 or red}};"></div>
+        {%endif%}
+        {%if i%2 == 1%}
+        <div class="black" style=" background-color:  {{color2 or black}};"></div>
+        {%endif%}
+        {%endif%}
+        {%if x%2 == 1%}
+        {%if i%2 == 0%}
+        <div class="black" style=" background-color:  {{color2 or black}};"></div>
+        {%endif%}
+        {%if i%2 == 1%}
+        <div class="white" style=" background-color:  {{color1 or red}};"></div>
+        {%endif%}
+        {%endif%}
+        {%endfor%}
+
+    </div>
+    {%endfor%}
+
+
 </body>
 
 </html>
