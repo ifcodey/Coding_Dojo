@@ -26,3 +26,6 @@ MarkupSafe==2.1.1
 Werkzeug==2.2.2
 
 (py3Env) C:\Users\Codey\Desktop\CodingDojo\Python\Flask>
+
+---------------------------------------
+call C:\Users\Codey\Desktop\CodingDojo\Python\MyEnvironment\py3Env\Scripts\activate

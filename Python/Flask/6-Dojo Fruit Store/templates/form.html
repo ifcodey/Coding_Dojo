@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Documentation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="contanior">
+        <form action="/" method="post">
+            <h1>Dojo Fruit Store!</h1>
+            <div>
+                <h4 style="text-decoration:underline ;">What would you like to buy?</h4>
+                <table>
+                    <tr>
+                        <td>Fruit Name</td>
+                        <td>Quantity</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Strawberry</td>
+                        <td>
+                            <select name="Strawberry">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Raspberry</td>
+                        <td>
+                            <select name="Raspberry">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Apple</td>
+                        <td>
+                            <select name="Apple">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+        <h4 style="text-decoration:underline;"> Your Information</h4>
+        <table>
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" name="Name"></td>
+            </tr>
+            <tr>
+                <td>Your Student ID :</td>
+                <td><input type="text" name="Id"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Buy me stuff!" id="submit">
+    </form>
+</body>
+
+</html>
