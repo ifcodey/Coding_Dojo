@@ -14,36 +14,26 @@
 
 <body>
     <div class="div_box">
-        <table>
-            <thead>
-                <tr>
-                    <td>Name :</td>
-                    <td>{{yourNames}}</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Dojo Location :</td>
-                    <td>{{cityNames}}</td>
-                </tr>
-                <tr>
-                    <td>Favorite language</td>
-                    <td>{{langNames}}</td>
-                </tr>
-                <tr>
-                    <td>Radio</td>
-                    <td>{{radio}}</td>
-                </tr>
-                <tr>
-                    <td>Checkbox</td>
-                    <td>{{checkbox}}</td>
-                </tr>
-                <tr>
-                    <td>Comment</td>
-                    <td>{{textAreas}}</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <h1>Time the user has actually visited the page</h1>
+        <p>{{session['count2']}}</p>
+
+
+
+        <h1>Real Counter </h1>
+        <p>{{session['count']}}</p>
+
+        <form action="/increment">
+            <input type="submit" value="increment">
+        </form><br>
+
+        <form action='/reset'>
+            <input type="submit" value="reset">
+        </form><br>
+
+        <form action='/'>
+            <input type="submit" value="refresh">
+        </form>
 
     </div>
 </body>

@@ -1,31 +1,5 @@
 body {
     display: flex;
     justify-content: center;
-}
-
-.contanior {
-    display: flex;
-    justify-content: space-evenly;
-    width: fit-content;
-    height: fit-content;
-    background-color: azure;
-    border: 2px solid black;
-    flex-wrap: wrap;
-    width: 400px;
-
-}
-
-div {
-    padding: 10px;
-    margin-top: 5px;
-}
-
-#submit1 {
-    display: flex;
-    justify-content: end;
-}
-#button{
-    border: 2px solid black;
-    box-shadow: 2px 1px black;
-    background-color: aqua;
+    text-align: center;
 }
