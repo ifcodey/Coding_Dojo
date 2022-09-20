@@ -1,5 +1,4 @@
-from django.shortcuts import render , redirect , HttpResponse
-from django.http import JsonResponse
+from django.shortcuts import render , redirect 
 from time import gmtime, strftime
     
 def time(request):

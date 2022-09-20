@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DojoappConfig(AppConfig):
+class DojoserveyappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dojoApp'
+    name = 'DojoServeyApp'

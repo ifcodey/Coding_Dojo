@@ -17,5 +17,6 @@ from django.urls import path,include
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', include('timerApp.urls'))
+    path('second/', include('timerApp.urls')),
+    path('', include('DojoServeyApp.urls'))
 ]
