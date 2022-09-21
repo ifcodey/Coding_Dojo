@@ -11,8 +11,10 @@ def dojo_form(request):
         context = {
             'uname': request.POST['Username'],
             'loc': request.POST['Location'],
-            'favlang': request.POST['fav_lang'],
-            'com': request.POST['Comment']
+            'favlang': request.POST['language'],
+            'com': request.POST['Comment'],
+            'radio': request.POST['radio'],
+            'checkbox': request.POST['checkbox'],
         }
         return render(request, 'dojoSurvey2.html', context)
     else:

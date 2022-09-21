@@ -1,42 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
 </head>
+
 <body>
     <form action="/time" method="post">
         {% csrf_token %}
         <h4>The current time and date:</h4>
         <div>{{time}}</div>
-</form>
-</body>
-</html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'css/time.css'%}">
-</head>
-
-<body>
-    <form action="/time" method="post">
-        {% csrf_token %}
-        <div><p>The current time and date:</p></div>
-        <div>{{time}}</div>
     </form>
 </body>
 
-</html> -->
+</html>

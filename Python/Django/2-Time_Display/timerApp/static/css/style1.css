@@ -2,12 +2,13 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    background-color: aquamarine;
+    
 }
 
-div {
+form > div {
     border: 2px solid black;
     margin: 20px;
     padding: 10px;
     width: max-content;
+    background-color: rgb(176, 191, 201);
 }

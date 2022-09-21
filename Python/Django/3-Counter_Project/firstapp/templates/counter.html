@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Form</title>
+    <!-- Compiled and minified CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+</head>
+
+<body>
+    <div class="div_box">
+        <div>
+            <h1>Time the user has actually visited the page</h1>
+            <p>{{request.session.count2}}</p>
+        </div>
+        <div>
+            <h1>Real Counter </h1>
+            <p>{{request.session.count}}</p>
+        </div>
+        <form action="/increment" method="post">
+            {% csrf_token %}
+            <input type="submit" value="increment">
+        </form><br>
+
+        <form action='/reset' method="post">
+            {% csrf_token %}
+            <input type="submit" value="reset">
+        </form><br>
+
+        <form action='/' method="post">
+            {% csrf_token %}
+            <input type="submit" value="refresh">
+        </form>
+
+    </div>
+</body>
+
+</html>

@@ -16,6 +16,24 @@ class LinkedList:
         while current is not None:
             print(current.value)
             current = current.next
+
+
+    def insert(self, value, pos):
+        # insert to the first of link list
+        if pos == 1:
+            Node1 = Node(value)
+            Node1.next = self.head
+            self.head = Node1
+        else:
+            current = self.head
+            for i in range(pos - 1):
+                current = current.next
+            Node1 = Node(value)
+            Node1.next = current.next
+            current.next = Node1
+
+        self.head = None
+        current = current.next
         
 # This for connect each node with each other
 # insert Node At Tail
