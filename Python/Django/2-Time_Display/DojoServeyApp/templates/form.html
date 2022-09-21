@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Documentation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+</head>
+
+<body>
+    <div class="contanior">
+        <form action="/result" method="post">
+            {% csrf_token %}
+            <div>
+                <label>Your Name :</label>
+                <input type="text" placeholder="Enter Your Name..." name="Username">
+            </div>
+            <div>
+                <label>Dojo Loaction</label>
+                <select name="Location" id="city">
+                    <option>San Jose</option>
+                    <option>Ohio</option>
+                    <option>Columbes</option>
+                </select>
+            </div>
+            <div>
+                <label>Favorite language</label>
+                <select name="fav_lang" id="language">
+                    <option>Python</option>
+                    <option>Java</option>
+                    <option>PHP</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Choose a Way you prefer to learn programming</label><br>
+                <input type="radio" id="myslef" value="Myself" name="rad">
+                <label for="myslef">By Myself</label>
+                <input type="radio" id="bootcamp" value="Bootcamp" name="rad">
+                <label for="bootcamp">With Bootcamp</label>
+                <input type="radio" id="friend" value="Friend" name="rad">
+                <label for="friend">With Friend</label>
+            </div>
+            <div>
+                <label>Choose a Way you prefer to practical</label><br>
+                <input type="checkbox" value="By Myself" name="check">
+                <label>By Myself</label>
+                <input type="checkbox" value="With Bootcamp" name="check">
+                <label>With freind in Bootcamp</label>
+            </div>
+
+            <div>
+                <label>Comment (optional):</label>
+                <textarea id="textarea" name="Comment"></textarea>
+            </div>
+            <div id="submit1">
+                <div id="submit2">
+                    <input type="submit" value="Button" id="button">
+                </div>
+            </div>
+        </form>
+</body>
+
+</html>

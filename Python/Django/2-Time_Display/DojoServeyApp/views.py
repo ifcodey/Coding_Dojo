@@ -3,7 +3,7 @@ from django.http import JsonResponse
 
 
 def form(request):
-    return render(request, 'dojoSurvey1.html')
+    return render(request, 'form.html')
 
 
 def dojo_form(request):
@@ -11,11 +11,11 @@ def dojo_form(request):
         context = {
             'uname': request.POST['Username'],
             'loc': request.POST['Location'],
-            'favlang': request.POST['language'],
+            'favlang': request.POST['fav_lang'],
             'com': request.POST['Comment'],
-            'radio': request.POST['radio'],
-            'checkbox': request.POST['checkbox'],
+            'R': request.POST['rad'],
+            'CH': request.POST['check'],
         }
-        return render(request, 'dojoSurvey2.html', context)
+        return render(request, 'result.html', context)
     else:
         return redirect('/')

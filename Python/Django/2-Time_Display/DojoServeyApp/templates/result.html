@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Form</title>
+    <!-- Compiled and minified CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="div_box">
+        <table>
+            <thead>
+                <tr>
+                    <td>Name :</td>
+                    <td>{{uname}}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dojo Location :</td>
+                    <td>{{loc}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite language</td>
+                    <td>{{favlang}}</td>
+                </tr>
+                <tr>
+                    <td>Radio</td>
+                    <td>{{R}}</td>
+                </tr>
+                <tr>
+                    <td>Checkbox</td>
+                    <td>{{CH}}</td>
+                </tr>
+                <tr>
+                    <td>Comment</td>
+                    <td>{{com}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
