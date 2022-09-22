@@ -1,0 +1,113 @@
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 717, in url_patterns
+    iter(patterns)
+TypeError: 'module' object is not iterable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 443, in execute
+    self.check()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 495, in check
+    messages.extend(check_resolver(pattern))
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 725, in url_patterns
+    raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) from e
+django.core.exceptions.ImproperlyConfigured: The included URLconf '<module 'users_app.urls' from 'C:\\Users\\Codey\\Desktop\\CodingDojo\\Python\\Django\\5-single_model_orm\\users_app\\urls.py'>' does not appear to have any patterns in it. If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 717, in url_patterns
+    iter(patterns)
+TypeError: 'module' object is not iterable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 443, in execute
+    self.check()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 495, in check
+    messages.extend(check_resolver(pattern))
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 725, in url_patterns
+    raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) from e
+django.core.exceptions.ImproperlyConfigured: The included URLconf '<module 'users_app.urls' from 'C:\\Users\\Codey\\Desktop\\CodingDojo\\Python\\Django\\5-single_model_orm\\users_app\\urls.py'>' does not appear to have any patterns in it. If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Migrations for 'users_app':
+  users_app\migrations\0001_initial.py
+    - Create model User
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, users_app
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying users_app.0001_initial... OK
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm>

@@ -1,0 +1,195 @@
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 717, in url_patterns
+    iter(patterns)
+TypeError: 'module' object is not iterable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 443, in execute
+    self.check()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 495, in check
+    messages.extend(check_resolver(pattern))
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 725, in url_patterns
+    raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) from e
+django.core.exceptions.ImproperlyConfigured: The included URLconf '<module 'users_app.urls' from 'C:\\Users\\Codey\\Desktop\\CodingDojo\\Python\\Django\\5-single_model_orm\\users_app\\urls.py'>' does not appear to have any patterns in it. If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 717, in url_patterns
+    iter(patterns)
+TypeError: 'module' object is not iterable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 443, in execute
+    self.check()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 495, in check
+    messages.extend(check_resolver(pattern))
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\checks\urls.py", line 24, in check_resolver
+    return check_method()
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 725, in url_patterns
+    raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) from e
+django.core.exceptions.ImproperlyConfigured: The included URLconf '<module 'users_app.urls' from 'C:\\Users\\Codey\\Desktop\\CodingDojo\\Python\\Django\\5-single_model_orm\\users_app\\urls.py'>' does not appear to have any patterns in it. If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py makemigrations
+Migrations for 'users_app':
+  users_app\migrations\0001_initial.py
+    - Create model User
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, users_app
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying users_app.0001_initial... OK
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\5-single_model_orm> python manage.py shell
+Python 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from users_app.models import *
+>>> Users.object.creat(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Users' is not defined
+>>> User.object.creat(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'object'
+>>> Users.objects.creat(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Users' is not defined
+>>> User.objects.creat(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age  = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'creat'
+>>> User.objects.create(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age  = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\base.py", line 585, in __init__
+    raise TypeError(
+TypeError: User() got unexpected keyword arguments: 'lastName', 'email'
+>>> User.objects.create(firstName = "Ahmed", lastName = "Shalash" , email = "ifcodey@gmail.com" , age  = 23)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 669, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\Codey\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\base.py", line 585, in __init__
+    raise TypeError(
+TypeError: User() got unexpected keyword arguments: 'lastName', 'email'
+>>> User.objects.create(firstName = "Ahmed", LastName = "Shalash" , emailAddress = "ifcodey@gmail.com" , age  = 23)
+<User: User object (1)>
+>>> User.objects.create(firstName = "Assi", LastName = "Aso" , emailAddress = "Aso@gmail.com" , age  = 23)
+<User: User object (2)>
+>>> User.objects.create(firstName = "Poloza", LastName = "Moso" , emailAddress = "poloza2000@gmail.com" , age  = 23)
+<User: User object (3)>
+>>> User.objects.all().values()
+<QuerySet [{'id': 1, 'firstName': 'Ahmed', 'LastName': 'Shalash', 'emailAddress': 'ifcodey@gmail.com', 'age': 23, 'created_at': datetime.datetime(2022, 9, 22, 8, 6, 24, 246179, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2022, 9, 22, 8, 6, 24, 246179, tzinfo=datetime.timezone.utc)}, {'id': 2, 'firstName': 'Assi', 'LastName': 'Aso', 'emailAddress': 'Aso@gmail.com', 'age': 23, 'created_at': datetime.datetime(2022, 9, 22, 8, 7, 43, 130608, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2022, 9, 22, 8, 7, 43, 130608, tzinfo=datetime.timezone.utc)}, {'id': 3, 'firstName': 'Poloza', 'LastName': 'Moso', 'emailAddress': 'poloza2000@gmail.com', 'age': 23, 'created_at': datetime.datetime(2022, 9, 22, 8, 8, 20, 682724, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2022, 9, 22, 8, 8, 20, 682724, tzinfo=datetime.timezone.utc)}]>
+>>> User.objects.last()
+<User: User object (3)>
+>>> User.objects.last().__dict__
+{'_state': <django.db.models.base.ModelState object at 0x000001ECFA2C9840>, 'id': 3, 'firstName': 'Poloza', 'LastName': 'Moso', 'emailAddress': 'poloza2000@gmail.com', 'age': 23, 'created_at': datetime.datetime(2022, 9, 22, 8, 8, 20, 682724, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2022, 9, 22, 8, 8, 20, 682724, tzinfo=datetime.timezone.utc)}
+>>> User.objects.first()
+<User: User object (1)>
+>>> User.objects.first().__dict__
+{'_state': <django.db.models.base.ModelState object at 0x000001ECFA2C9750>, 'id': 1, 'firstName': 'Ahmed', 'LastName': 'Shalash', 'emailAddress': 'ifcodey@gmail.com', 'age': 23, 'created_at': datetime.datetime(2022, 9, 22, 8, 6, 24, 246179, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2022, 9, 22, 8, 6, 24, 246179, tzinfo=datetime.timezone.utc)}
+>>> User.objects.get(id = 3)
+<User: User object (3)>
+>>>
+>>> c=User.objects.get(id = 3)
+>>> c.LastName.save(Pancakes)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'save'
+>>> c.LastName =Pancakes
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Pancakes' is not defined
+>>> c.LastName ="Pancakes"
+>>> c.LastName.save()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'save'
+>>> c.save()
+>>> c1 = User.objects.get(id = 2)
+>>> c1.delete()
+(1, {'users_app.User': 1})
+>>> User.objects.all().order_by("firstName")
+<QuerySet [<User: User object (1)>, <User: User object (3)>]>
+>>> User.objects.all().order_by("-firstName")
+<QuerySet [<User: User object (3)>, <User: User object (1)>]>
+>>>
