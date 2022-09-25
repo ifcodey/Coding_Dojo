@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../static/style.css">
   </head>
   <body>
-    <h3>Your Gold: <input class="input" type="text" placeholder={{request.session.account_money}}></h3>
+    <!-- <h3>Your Gold: <input class="input" type="text" placeholder={{request.session.account_money}}></h3> -->
+    <h3>Your Gold: <input class="input" type="text" value={{request.session.account_money}}></h3>
     <div class="flex">
     <form action="/getMoney" method="POST">
         {% csrf_token %}
@@ -18,7 +19,7 @@
             <input type="hidden" name="account_money" value="farm">
             <p>Farm</p>
             <p>(earns 10-20 gold)</p>
-            <input class="btn" type="submit" value="Find Gold!">
+            <input class="btn" type="submit" value="Find Gold">
             
         </div>
         
@@ -29,7 +30,7 @@
             <input type="hidden" name="account_money" value="cave">
             <p>Cave</p>
             <p>(earns 10-20 gold)</p>
-            <input class="btn" type="submit" value="Find Gold!">
+            <input class="btn" type="submit" value="Find Gold">
         </div>  
     </form>
     <form action="/getMoney" method="POST">
@@ -38,7 +39,7 @@
             <input type="hidden" name="account_money" value="house">
             <p>House</p>
             <p>(earns 10-20 gold)</p>
-            <input class="btn" type="submit" value="Find Gold!">
+            <input class="btn" type="submit" value="Find Gold">
         </div>
     </form>
     <form action="/getMoney" method="POST">
@@ -47,22 +48,21 @@
             <input type="hidden" name="account_money" value="quest">
             <p>Quest</p>
             <p>(earns/takes 10-50 gold)</p>
-            <input class="btn" type="submit" value="Find Gold!">
+            <input class="btn" type="submit" value="Find Gold">
         </div>
     </form>
     </div>
-    <hr>
     <form class="reset" action="/reset">
-        <input class="btn" type="submit" value="Reset ME!">
+        <input class="btn" type="submit" value="Reset Ya Kbeer">
     </form>
     <h4>Activites:</h4>
         
         <div class="text" name="activate">
-            {% for x in request.session.activate reversed%}
-            {% if 'failed' in x %}
-            <p class="paragraph">{{x}}</p>
+            {% for prints in request.session.activate reversed%}
+            {% if 'failed' in prints %}
+            <p class="paragraph">{{prints}}</p>
             {% else %}
-            <p style="color:rgb(97, 21, 21);">{{x}}</p>
+            <p style="color:rgb(97, 21, 21);">{{prints}}</p>
             {%endif%}
             {% endfor %}
         </div>

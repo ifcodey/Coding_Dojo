@@ -16,7 +16,9 @@ def getGold(request):
 def getMoney(request):
     randcolor = random.randint(0, 254)
     colorX  = '#' + str(randcolor)
-    # =================================================
+
+    # --------------------------------------------
+
     if request.POST['account_money'] == 'farm':
         randNum = random.randint(10, 20)
         request.session['account_money'] += randNum
@@ -53,6 +55,7 @@ def getMoney(request):
         request.session['account_money'] +=randNum
     return redirect('/')
     
+# reset a text box
 def reset(request):
     request.session['account_money'] = 0
     request.session['activate'] = []
