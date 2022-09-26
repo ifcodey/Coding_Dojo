@@ -29,7 +29,7 @@ def getMoney(request):
         request.session['counter'] = randNum
 
     elif request.POST['account_money'] == 'cave':
-         randNum = random.randint(10, 20)
+         randNum = random.randint(10, 20) 
 
          request.session['account_money'] += randNum
          request.session['activate'].append(f'You Entered a cave and Entered {str(randNum)}. {str(datetime.now().strftime("%b-%d-%Y %H:%M-%p"))};')
@@ -61,5 +61,8 @@ def reset(request):
     request.session['account_money'] = 0
     request.session['activate'] = []
     return redirect('/')
+
+
+
 
 
