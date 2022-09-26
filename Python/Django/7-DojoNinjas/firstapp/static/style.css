@@ -1,0 +1,27 @@
+header{
+    display: flex; 
+    justify-content: space-around;
+    padding: 2px;
+    margin: 2px;
+    border-bottom: 2px solid black ;
+}
+.right , .left{
+    display: flex;
+    align-content: left; 
+    justify-content: left;
+    justify-self: left;
+}
+.add{
+    border: 2px solid green;
+    box-shadow: 2px 1px cadetblue;
+    
+}
+.syntex{
+    display: flex;
+    justify-content: flex-end;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

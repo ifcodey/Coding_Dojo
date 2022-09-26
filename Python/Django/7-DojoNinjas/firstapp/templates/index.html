@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Dojos & Ninjas</title>
+    <link rel="stylesheet" href="{static 'style.css'}">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+    <div class="containor">
+        <header>
+
+            <div id="right">
+                <form action="/add_dojo" method="post">
+                    {%csrf-token%}
+                    <input type="hidden" placeholder="Enter a Name" name="dojo_name">
+
+                    <div class="syntex">
+                        <p>Name :<input type="text" name="name"></p>
+                    </div>
+
+                    <div class="syntex">
+                        <p>City :<input type="text" name="city"></p>
+                    </div>
+
+                    <div class="syntex">
+                        <p>State:<input type="text" name="state"></p>
+                    </div>
+
+                    <div class="syntex">
+                        <input type="submit" class="add" value="Add">
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div id="left">
+                <form action="/add_ninja" method="post">
+                    {%csrf-token%}
+                    <input type="hidden" placeholder="Enter a Name" name="ninja_name">
+
+                    <div class="syntex">
+                        <p>First Name :<input type="text" name="first_name"></p>
+                    </div>
+
+                    <div class="syntex">
+                        <p>last Name :<input type="text" name="last_name"></p>
+                    </div>
+
+                    <div class="syntex">
+                        <p>Dojo:
+                            <select>
+                                <option disabled selected hidden>Select a Dojo ...</option>
+                                {%for x in all_Dojo%}
+                                <option>{{x.name}}</option>
+                                {%endfor%}
+                            </select>
+                        </p>
+                    </div>
+                    <div class="syntex">
+                        <input class="add" type="submit" value="Add">
+                    </div>
+                </form>
+            </div>
+
+        </header>
+        <!-- the section part -->
+        <h1 style="text-align:center;">All the Dojos</h1>
+        <section>
+            <form action="/checkbox" method="post"></form>
+            {%csrf-token%}
+
+            {%for i in all_Dojo%}
+            <ul name="checkbox">
+                {{i.name}}
+                {%for x in all_Ninja%}
+                <li>
+                    {{x.first_name }} &nbsp; {{x.last_name}}
+                </li>
+                {%endfor%}
+            </ul>
+            {%endfor%}
+            </form>
+        </section>
+    </div>
+
+</body>
+
+</html>

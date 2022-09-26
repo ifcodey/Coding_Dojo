@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- <h3>Your Gold: <input class="input" type="text" placeholder={{request.session.account_money}}></h3> -->
-    <h3>Your Gold: <input class="input" type="text" value={{request.session.account_money}}></h3>
+    <h3>Your Gold: <input class="input" type="text" value={{request.session.account_money disabled></h3>
     <div class="flex">
     <form action="/getMoney" method="POST">
         {% csrf_token %}
@@ -68,6 +68,14 @@
             <p style="color:rgb(97, 21, 21);">{{prints}}</p>
             {%endif%}
             {% endfor %}
+
+            <!-- Other Way -->
+            
+            <!-- {% if request.session['statusX'] is True %}
+            <p class="paragraph">{{prints}}</p>
+            {% else %}
+            <p style="color:rgb(97, 21, 21);">{{prints}}</p>
+            {%endif%} -->
         </div>
   </body>
 </html>
