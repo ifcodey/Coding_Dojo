@@ -14,3 +14,7 @@ def delecting(request):
     return render(request,'user.html',context)
   
 
+def deletes(request):
+    c = User.objects.last()
+    c.delete()
+    return redirect('/')

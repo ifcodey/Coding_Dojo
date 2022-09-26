@@ -1,6 +1,6 @@
 footer {
-    display: inline-flexbox;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
     margin-top: 1%;
     border: 2px dashed blueviolet;
     width: fit-content;

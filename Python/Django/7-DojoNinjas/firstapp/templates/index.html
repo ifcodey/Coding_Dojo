@@ -16,7 +16,7 @@
         <header>
 
             <div id="right">
-                <form action="/add_dojo" method="post">
+                <form action="/adding" method="post">
                     {%csrf-token%}
                     <input type="hidden" placeholder="Enter a Name" name="dojo_name">
 
@@ -41,9 +41,9 @@
 
 
             <div id="left">
-                <form action="/add_ninja" method="post">
+                <form action="/adding" method="post">
                     {%csrf-token%}
-                    <input type="hidden" placeholder="Enter a Name" name="ninja_name">
+                    
 
                     <div class="syntex">
                         <p>First Name :<input type="text" name="first_name"></p>
@@ -55,6 +55,7 @@
 
                     <div class="syntex">
                         <p>Dojo:
+                            <input type="hidden" placeholder="Enter a Name" name="dojo">
                             <select>
                                 <option disabled selected hidden>Select a Dojo ...</option>
                                 {%for x in all_Dojo%}
@@ -63,6 +64,7 @@
                             </select>
                         </p>
                     </div>
+
                     <div class="syntex">
                         <input class="add" type="submit" value="Add">
                     </div>
@@ -73,7 +75,7 @@
         <!-- the section part -->
         <h1 style="text-align:center;">All the Dojos</h1>
         <section>
-            <form action="/checkbox" method="post"></form>
+            <form action="/dispalyerDB" method="post"></form>
             {%csrf-token%}
 
             {%for i in all_Dojo%}

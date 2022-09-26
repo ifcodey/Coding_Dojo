@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Form</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
@@ -38,7 +38,7 @@
     </section>
     <h4>Add a User</h4>
     <form action="/result" method="post">
-        
+
         {%csrf_token%}
         <footer>
             <div>
@@ -60,9 +60,20 @@
             <div class="button1">
                 <input type="submit" value="Add" class="button2">
             </div>
-        </footer>
-
     </form>
+    <div class="delete">
+        <form action="/delete" method="post">
+            {%csrf_token%}
+            <div class="button1">
+                <input type="submit" value="delete" class="button2">
+            </div>
+        </form>
+    </div>
+    </footer>
+
+
+
+
 </body>
 
 </html>
