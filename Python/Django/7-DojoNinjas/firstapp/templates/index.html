@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Dojos & Ninjas</title>
-    <link rel="stylesheet" href="{static 'style.css'}">
-    <link rel="stylesheet" href="../static/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
 
 </head>
 
@@ -16,9 +17,9 @@
         <header>
 
             <div id="right">
+                <h3>Add Dojo</h3>
                 <form action="/adding" method="post">
-                    {%csrf-token%}
-                    <input type="hidden" placeholder="Enter a Name" name="dojo_name">
+                    {% csrf_token %}
 
                     <div class="syntex">
                         <p>Name :<input type="text" name="name"></p>
@@ -41,9 +42,10 @@
 
 
             <div id="left">
-                <form action="/adding" method="post">
-                    {%csrf-token%}
-                    
+                <h3>Add Ninja</h3>
+                <form action="/adding2" method="post">
+                    {% csrf_token %}
+
 
                     <div class="syntex">
                         <p>First Name :<input type="text" name="first_name"></p>
@@ -55,12 +57,13 @@
 
                     <div class="syntex">
                         <p>Dojo:
-                            <input type="hidden" placeholder="Enter a Name" name="dojo">
-                            <select>
+                            <select name="dojo" required>
                                 <option disabled selected hidden>Select a Dojo ...</option>
-                                {%for x in all_Dojo%}
-                                <option>{{x.name}}</option>
-                                {%endfor%}
+                                {% for x in all_Dojo %}
+                                <option value="{{x.id}}">
+                                    {{x.name}}
+                                </option>
+                                {% endfor %}
                             </select>
                         </p>
                     </div>
@@ -72,23 +75,34 @@
             </div>
 
         </header>
+
         <!-- the section part -->
+
         <h1 style="text-align:center;">All the Dojos</h1>
         <section>
-            <form action="/dispalyerDB" method="post"></form>
-            {%csrf-token%}
+            <div>
+                <ul>
+                    {%for i in all_Dojo%}
 
-            {%for i in all_Dojo%}
-            <ul name="checkbox">
-                {{i.name}}
-                {%for x in all_Ninja%}
-                <li>
-                    {{x.first_name }} &nbsp; {{x.last_name}}
-                </li>
+                    <li>
+                        {{i.name}}
+                        <form action="/del" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="remove" value="{{i.id}}">
+                            <input type="submit" value="delete">
+                        </form>
+                    </li>
+
+                </ul>
+
+                <ol>
+                    {%for x in i.ninjas.all%}
+                    <li>{{x.first_name }}{{x.last_name}}</li>
+                    {%endfor%}
+                </ol>
+
                 {%endfor%}
-            </ul>
-            {%endfor%}
-            </form>
+            </div>
         </section>
     </div>
 

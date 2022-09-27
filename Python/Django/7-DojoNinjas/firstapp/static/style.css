@@ -16,12 +16,8 @@ header{
     box-shadow: 2px 1px cadetblue;
     
 }
-.syntex{
-    display: flex;
-    justify-content: flex-end;
-}
-section {
+section{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
 }
