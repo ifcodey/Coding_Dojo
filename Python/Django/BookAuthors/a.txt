@@ -1,0 +1,112 @@
+1-Run the shell and import your models:
+--------------------------------------------
+python manage.py makemigrations
+python manage.py migrate
+from firstapp.models import *
+
+2-Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+--------------------------------------------
+books = Book.objects.create(title = "C sharp", desc= "Prgramming Language for .net")
+books = Book.objects.create(title = "Java", desc= "Prgramming Language")
+books = Book.objects.create(title = "Python", desc= "Prgramming Language")
+books = Book.objects.create(title = "PHP", desc= "Prgramming Language")
+books = Book.objects.create(title = "Ruby", desc= "Prgramming Language")
+Book.objects.all().__dict__
+
+3-Query: Create 5 different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+--------------------------------------------
+>>> auth = Author.objects.create(first_name='Jane',last_name='Austen')
+>>> auth = Author.objects.create(first_name='Emily',last_name='Dickinson')
+>>> auth = Author.objects.create(first_name='Fyodor',last_name='Dostoevsky')
+>>> auth = Author.objects.create(first_name='William',last_name='Shakespeare')
+>>> auth = Author.objects.create(first_name='Lau',last_name='Tzu')
+>>> Author.objects.all()
+
+
+4-Add a new text field in the authors table called 'notes'.
+--------------------------------------------
+put in Author Class in DB => nodes = models.TextField(null = True)
+python manage.py makemigrations
+python manage.py migrate
+from firstapp.models import *
+
+5-Query: Change the name of the C Sharp book to C#
+--------------------------------------------
+books=Book.objects.get(id=1)
+books.title='C#'
+for check and see a new result put => books.title
+books.save()
+
+6-Query: Change the first name of the 4th author to Bill
+--------------------------------------------
+auth = Author.objects.get(id = 4)
+auth.first_name = "Bill"
+auth.save()
+
+7-Query: Assign the first author to the first 2 books
+--------------------------------------------
+book1=Book.objects.get(id=3)
+book2=Book.objects.get(id=4)
+book3=Book.objects.get(id=5)
+book4=Book.objects.get(id=6)
+book5=Book.objects.get(id=7)
+
+author1=Author.objects.get(id=1)
+author2=Author.objects.get(id=2)
+author3=Author.objects.get(id=3)
+author4=Author.objects.get(id=4)
+author5=Author.objects.get(id=5)
+
+should used a manytomany keys to add books from Book Table to Author Table
+
+author1.books.add(book1)
+author1.books.add(book2)
+
+8-Query: Assign the second author to the first 3 books
+--------------------------------------------
+author2.books.add(book1)
+author2.books.add(book2)
+author2.books.add(book3)
+
+9-Query: Assign the third author to the first 4 books
+--------------------------------------------
+author3.books.add(book1)
+author3.books.add(book2)
+author3.books.add(book3)
+author3.books.add(book4)
+
+10-Query: Assign the fourth author to the first 5 books (or in other words, all the books)
+--------------------------------------------
+author4.books.add(book1)
+author4.books.add(book2)
+author4.books.add(book3)
+author4.books.add(book4)
+author4.books.add(book5)
+
+11-Query: Retrieve all the authors for the 3rd book
+--------------------------------------------
+c= book3.authors.all()
+c
+
+12-Query: Remove the first author of the 3rd book
+--------------------------------------------
+x = book3.authors.get(id  = 2)
+x.delete()
+
+now for check if author is delete 
+
+c = book3.authors.all()
+c
+
+13-Query: Add the 5th author as one of the authors of the 2nd book
+--------------------------------------------
+c= author5.books.add(book2)
+
+
+14-Query: Find all the books that the 3rd author is part of
+--------------------------------------------
+author3.books.all()
+
+15-Query: Find all the authors that contributed to the 5th book
+--------------------------------------------
+ book5.authors.all()

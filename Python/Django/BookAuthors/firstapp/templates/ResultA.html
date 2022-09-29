@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show authors</title>
+  <!-- {% load static %} -->
+  <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
+  <link rel="stylesheet" href="../static/style_2.css" />
+
+</head>
+
+<body>
+  <p>{{authors.id}}</p>
+  <p>{{authors.firstname}} {{authors.lastname}}</p>
+  <p>{{authors.notes}}</p>
+
+  <!-- <ul class="list-group">
+    {% for book in authors.books.all %}
+    <li>
+      {{book.title}}
+    </li>
+    <li>
+      {{book.description}}
+    </li>
+    {%endfor%}
+  </ul> -->
+
+  <!-- <form action="/book_to_auth/{{authors.id}}" method="post">
+    {%csrf_token%}
+
+    <select name="bookToAuth">
+
+      {% for book in books %} {% if authors not in book.authors.all %}
+      <option value="{{book.id}}">{{book.title}}</option>
+      {%endif%} {%endfor%}
+
+    </select>
+
+    <p><input type="submit" value="Add Book" /></p>
+  </form> -->
+
+</body>
+
+</html>

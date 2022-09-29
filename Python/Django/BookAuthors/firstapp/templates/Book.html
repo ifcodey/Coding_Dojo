@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add a book</title>
+  <!-- {% load static %} -->
+  <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
+  <link rel="stylesheet" href="../static/style_1.css" />
+</head>
+
+<body>
+  <section>
+    <div class="right">
+      <h1>Add a Book</h1>
+
+<!--  for add a book to tables in Book page -->
+      <form action="/addbooks" method="post">
+        {%csrf_token%}
+
+        <div class="syntex">
+          <p>Title <input type="text" name="title" /></p>
+        </div>
+
+        <div class="syntex">
+          <span>Description
+            <textarea name="desc" cols="30" rows="4"></textarea>
+          </span>
+        </div>
+
+        <div class="syntex">
+          <input type="submit" value="Add Book" />
+        </div>
+
+      </form>
+    </div>
+
+    <div class="left">
+
+<!-- table for view a books that exit in database -->
+      <table>
+        <!-- used for get a attribute from a Book
+        but a allbook(keys many to many) => get it from firstpage function in view by send a context -->
+        {%for result in allbook_firstpage%}
+        <tr>
+          <!-- used a hidden input for  -->
+          <!-- <input type="hidden" name="hidden" value="{{result.id}}"> -->
+          <td>{{result.id}}</td>
+          <td>{{result.title}}</td>
+
+          <!-- result.id => print a id for book and i was used it to send in url => view_books/<int:id>/ -->
+          <td><a href="/view_books/{{result.id}}"> View</a></td>
+        </tr>
+        {%endfor%}
+
+      </table>
+
+    </div>
+  </section>
+</body>
+
+</html>

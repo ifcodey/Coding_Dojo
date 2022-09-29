@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Show</title>
+    <!-- {% load static %} -->
+    <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
+    <link rel="stylesheet" href="../static/style_1.css" />
+
+</head>
+
+<body>
+    <!-- this section for view a data of Book from view function called => (viewbooks) function-->
+    <section>
+        <table>
+            <tr>
+                <td>{{book.title}}</td>
+            </tr>
+            <tr>
+                <td>{{book.id}}</td>
+            </tr>
+            <tr>
+                <td>{{book.desc}}</td>
+            </tr>
+        </table>
+    </section>
+
+    <h1>all author write this book</h1>
+    <h2>Authors</h2>
+<!-- for view a all author but => a book => form pade -->
+    {% for i in book.authors.all %}
+    <p> >> {{i.first_name}}</p>
+    {% endfor %}
+
+    <form action="/create" method="post">
+        {%csrf_token%}
+        <input type="hidden" name="hidden" value="{{book.id}}">
+        
+        <select name="select1">
+            {% for i in author %}
+            <option value="{{i.id}}">{{i.first_name}}</option>
+            {% endfor %}
+            <input type="submit" name="submit">
+
+        </select>
+    </form>
+</body>
+
+</html>
