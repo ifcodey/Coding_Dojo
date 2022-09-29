@@ -6,44 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Author Show</title>
-    <!-- {% load static %} -->
-    <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
-    <link rel="stylesheet" href="../static/style_1.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_1.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style_1.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
 
 </head>
 
 <body>
     <!-- this section for view a data of Book from view function called => (viewbooks) function-->
     <section>
-        <table>
-            <tr>
-                <td>{{book.title}}</td>
-            </tr>
-            <tr>
-                <td>{{book.id}}</td>
-            </tr>
-            <tr>
-                <td>{{book.desc}}</td>
-            </tr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                    <td>{{book2.id}}</td>
+                    <td>{{book2.title}}</td>
+                    <td>{{book2.desc}}</td>
+                </tr>
+            </tbody>
         </table>
     </section>
 
-    <h1>all author write this book</h1>
-    <h2>Authors</h2>
-<!-- for view a all author but => a book => form pade -->
-    {% for i in book.authors.all %}
-    <p> >> {{i.first_name}}</p>
+    <h4>Authors</h4>
+    <!-- for view a all author but => a book => form pade -->
+
+    {% for i in book2.authors.all %}
+    <ul style="list-style:disc;">
+        <li>
+            {{i.first_name}}
+        </li>
+    </ul>
     {% endfor %}
 
-    <form action="/create" method="post">
+    <form action="/createbook" method="post">
         {%csrf_token%}
-        <input type="hidden" name="hidden" value="{{book.id}}">
-        
-        <select name="select1">
-            {% for i in author %}
+
+        <input type="hidden" name="hidden" value="{{book2.id}}">
+
+        <select name="selectA">
+            <option value="" disabled selected>- Select on author -</option>
+            {% for i in author2 %}
             <option value="{{i.id}}">{{i.first_name}}</option>
             {% endfor %}
-            <input type="submit" name="submit">
+            <input type="submit" name="submit" id="submit">
 
         </select>
     </form>

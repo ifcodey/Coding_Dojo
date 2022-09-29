@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add an author</title>
-  <!-- {% load static %} -->
-  <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
-  <link rel="stylesheet" href="../static/style_2.css" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style_2.css' %}">
+  <!-- <link rel="stylesheet" href="../static/style_2.css" /> -->
 
 </head>
 
@@ -22,18 +22,18 @@
         {%csrf_token%}
 
         <div class="syntex">
-          <p>First Name <input type="text" name="fname" /></p>
+          <p>First Name <input type="text" name="fname" required maxlength="25"/></p>
         </div>
 
         <div class="syntex">
           <div class="syntex">
-            <p>Last Name <input type="text" name="lname" /></p>
+            <p>Last Name <input type="text" name="lname" required maxlength="50"/></p>
           </div>
         </div>
 
         <div class="syntex">
           <span>Notes
-            <textarea ame="description" cols="30" rows="4"></textarea>
+            <textarea name="notes" cols="30" rows="4"></textarea>
           </span>
         </div>
 
@@ -47,10 +47,10 @@
     <div class="left">
 
       <table>
-        {%for result in authors%}
+        {%for result in auth1%}
         <tr>
           <td>{{result.id}}</td>
-          <td>{{result.firstname}} {{result.lastname}}</td>
+          <td>{{result.first_name}} {{result.last_name}}</td>
           <td><a href="/view_authors/{{result.id}}"> View</a></td>
         </tr>
         {%endfor%}
@@ -61,4 +61,5 @@
   </section>
 
 </body>
+
 </html>

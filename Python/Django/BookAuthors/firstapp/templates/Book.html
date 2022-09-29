@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add a book</title>
-  <!-- {% load static %} -->
-  <!-- <link rel="stylesheet" href="{% static 'style1.css' %}"> -->
-  <link rel="stylesheet" href="../static/style_1.css" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style_1.css' %}">
+  <!-- <link rel="stylesheet" href="../static/style_1.css" /> -->
 </head>
 
 <body>
@@ -16,37 +16,64 @@
     <div class="right">
       <h1>Add a Book</h1>
 
-<!--  for add a book to tables in Book page -->
+      <!--  for add a book to tables in Book page -->
       <form action="/addbooks" method="post">
         {%csrf_token%}
-
         <div class="syntex">
-          <p>Title <input type="text" name="title" /></p>
+          <p>Title <input type="text" name="title" required maxlength="15" /></p>
         </div>
-
         <div class="syntex">
           <span>Description
-            <textarea name="desc" cols="30" rows="4"></textarea>
+            <textarea name="desc" cols="30" rows="4" required maxlength="50"></textarea>
           </span>
         </div>
-
         <div class="syntex">
           <input type="submit" value="Add Book" />
         </div>
-
       </form>
+      <form action="deletebooks" method="post">
+        {%csrf_token%}
+        <input type="submit" value="Remove All Book" />
+      </form>
+
+
+      <form action="DSBooks" method="post">
+        {%csrf_token%}
+        <select name="selectD">
+          <option value="" disabled selected>- Select on book for Delete/Update -</option>
+          {% for i in book1 %}
+          <option value="{{i.id}}">{{i.title}}</option>
+          <input type="hidden" name="hidder" value="{{i.id}}">
+          {% endfor %}
+          <input type="submit" value="Remove Select Book" />
+        </select>
+      </form>
+      <br>
+      <form action="USBooks" method="post">
+        {%csrf_token%}
+        <select name="selectE">
+          <option value="" disabled selected>- Select on book for Delete/Update -</option>
+          {% for i in book1 %}
+          <option value="{{i.id}}">{{i.title}}</option>
+          <input type="hidden" name="hidder" value="{{i.id}}">
+          {% endfor %}
+          <input type="submit" value="Update Select Book" />
+        </select>
+      </form>
+
+
+
     </div>
 
     <div class="left">
 
-<!-- table for view a books that exit in database -->
+      <!-- table for view a books that exit in database -->
       <table>
         <!-- used for get a attribute from a Book
         but a allbook(keys many to many) => get it from firstpage function in view by send a context -->
-        {%for result in allbook_firstpage%}
+        {%for result in book1%}
         <tr>
           <!-- used a hidden input for  -->
-          <!-- <input type="hidden" name="hidden" value="{{result.id}}"> -->
           <td>{{result.id}}</td>
           <td>{{result.title}}</td>
 
@@ -58,6 +85,7 @@
       </table>
 
     </div>
+
   </section>
 </body>
 

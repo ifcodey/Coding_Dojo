@@ -1,0 +1,4 @@
+call C:\Users\Codey\Desktop\CodingDojo\Python\MyEnvironment\djangoPy3Env\Scripts\activate
+django-admin startproject First_Django_Project
+cd 
+python manage.py startapp firstapp
