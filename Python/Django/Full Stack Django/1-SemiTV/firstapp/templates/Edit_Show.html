@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add_edit.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+</head>
+
+<body>
+    <div id="goback">
+        <p><a href="/shows">Go Back</a></p>
+    </div>
+    <h1>Edit Show <span>{{editdata.id}}</span> </h1>
+    <section>
+
+        <!-- form -->
+        <form action="/update" method="post">
+            {%csrf_token%}
+            <!-- 1 -->
+            <div>
+                <input type="hidden" name="hide" value="{{editdata.id}}">
+                <p>Title</p>
+                <input type="text" name="title" value="{{editdata.title}}" required maxlength="15" />
+            </div>
+
+            <!-- 2.1 -->
+            <div class="field_input">
+                <div>
+                    <p>Nework</p>
+                    <input type="text" name="nets" value="{{editdata.nets}}" required maxlength="8" />
+                </div>
+              
+
+                <div>
+                    <p>release_date</p>
+                    <input type="date" name="release_date" value="{{editdata.release_date}}" required />
+                </div>
+                
+            </div>
+            <!-- 3 -->
+                <p>Description</p>
+                <textarea cols="30" rows="5" name="desc" value="{{editdata.desc}}"></textarea>
+
+            <div class="footer">
+                <input type="submit" value="Update" />
+            </div>
+            <div class="footer">
+                <a style="text-align:center ;" href="/shows/{{editdata.id}}">Go to Show</a>
+            </div>
+        </form>
+        
+    </section>
+
+</body>
+
+</html>

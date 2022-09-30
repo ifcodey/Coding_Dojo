@@ -1,0 +1,46 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+form {
+    border: 1px solid silver;
+}
+
+#goback {
+    display: flex;
+    justify-content: end;
+}
+
+h1 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.field_input {
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+
+
+}
+
+.field_input>div {
+    padding: 10px;
+
+}
+
+input,
+textarea {
+    box-shadow: 1px 1px cadetblue;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
