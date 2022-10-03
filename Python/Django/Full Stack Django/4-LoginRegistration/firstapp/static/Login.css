@@ -1,0 +1,28 @@
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.align {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reg,
+.log {
+    border: 1px dashed crimson;
+    height: fit-content;
+    padding: 10px;
+}
+
+#submit {
+    background-color: rgb(120, 45, 118);
+    box-shadow: 2px 1px rgb(204, 21, 67);
+    border: 0ch;
+    color: rgb(147, 179, 126);
+}
+
+h2{
+    border-bottom: 2px solid blue;
+    width: fit-content;
+}
