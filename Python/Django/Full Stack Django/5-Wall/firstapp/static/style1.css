@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(185, 172, 172);
+}
+
+.right {
+    display: inline;
+}
+
+.Contain {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 6%;
+}
+
+#submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#submit2 {
+    color: cornflowerblue;
+    box-shadow: 2px 1px brown;
+    background-color: blanchedalmond;
+    padding: 5px;
+}
+#p_psot{
+    border: 1px dashed slateblue;
+    width: fit-content;
+  
+}
+/* .masseges{
+  margin-left: 10px;
+} */

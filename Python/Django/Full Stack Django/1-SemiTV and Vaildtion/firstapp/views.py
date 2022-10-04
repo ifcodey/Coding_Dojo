@@ -25,6 +25,7 @@ def allshow(request):
 # ===========================================================
 # ******** Add_Show Page ********
 # ===========================================================
+
 # go to All_Show page and give it a data from moduels
 def refresh_Add(request):
     context2 = {

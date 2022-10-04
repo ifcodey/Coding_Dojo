@@ -18,6 +18,10 @@
     <div class="right">
       <h1>Add an Author</h1>
 
+      <!--****************************************-->
+      <!--  for add a authors to our book -->
+      <!--****************************************-->
+
       <form action="/addauthor" method="post">
         {%csrf_token%}
 
@@ -46,11 +50,20 @@
 
     <div class="left">
 
+      <!--****************************************-->
+      <!--  for dispaly a author of our book -->
+      <!--****************************************-->
+
       <table>
         {%for result in auth1%}
         <tr>
           <td>{{result.id}}</td>
           <td>{{result.first_name}} {{result.last_name}}</td>
+
+      <!--****************************************-->
+      <!-- for pass a link with id -> url -> view -->
+      <!--****************************************-->
+
           <td><a href="/view_authors/{{result.id}}"> View</a></td>
         </tr>
         {%endfor%}

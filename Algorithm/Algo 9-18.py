@@ -38,4 +38,7 @@ list_1 = LinkedList()
 # list_1.head.next.next.next = Node("4")
 
 list_1.addTotal("zoza")
+list_1.addTotal("zoo")
 list_1.traverse()
+
+

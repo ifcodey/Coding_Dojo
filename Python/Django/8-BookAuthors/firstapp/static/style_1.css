@@ -40,3 +40,8 @@ div{
     box-shadow: 2px 1px rgb(141, 136, 135);
     color:rgb(191, 56, 19);
 }
+h1{
+    border-bottom: 2px solid rgb(199, 24, 132);
+    width: fit-content;
+    text-align: center;
+}

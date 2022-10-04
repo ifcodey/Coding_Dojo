@@ -30,18 +30,15 @@ def deletebooks(request):
     return redirect('/')
 
 def DSBooks(request):
-    id = request.POST['selectD']
+    id = request.POST['select_delete']
     c = Book.objects.get(id = id)
     c.delete()
     return redirect('/')
 
 
 def USBooks(request):
-    id = request.POST['selectE']
-    print("-----------------------")
+    id = request.POST['select_update']
     c = Book.objects.get(id=id)
-    print(c)
-    print("-----------------------")
     c.title = request.POST['title']
     c.desc =  request.POST['desc']
     c.save()
@@ -71,7 +68,7 @@ def createbook(request):
     # id => for book get it by pass in hidden input
     id = request.POST['hidden']
     # id => for author get it
-    auth = Author.objects.get(id=request.POST['selectA'])
+    auth = Author.objects.get(id=request.POST['select_book'])
 
     book = Book.objects.get(id=id)
     book.authors.add(auth)
@@ -79,12 +76,6 @@ def createbook(request):
 
     return redirect(f'view_books/{id}')
 
-
-# def DSBooks(request):
-#     id = request.POST['hidden']
-#     auth = Author.objects.get(id=request.POST['selectA'])
-#     book = Book.objects.get(id=id)
-#     book.authors.remove(auth)
 # ----------------------author Page------------------
 # --------------------------------------------------
 
@@ -122,7 +113,7 @@ def createAuthor(request):
     # id => for book get it by pass in hidden input
     id = request.POST['hidden']
     # id => for author get it 
-    book3 = Book.objects.get(id=request.POST['selectA'])
+    book3 = Book.objects.get(id=request.POST['select_author'])
 
     auth = Author.objects.get(id=id)
     auth.books.add(book3)

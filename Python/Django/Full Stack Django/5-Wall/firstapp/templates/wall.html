@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+
+<body>
+    <section>
+
+        <!-- ************************* -->
+        <!-- The Nav Bar For Main Page -->
+        <!-- ************************* -->
+
+        <nav>
+            <div class="left">
+                <h2>Coding Dojo Wall</h2>
+            </div>
+            <div class="right">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Welcome {{user.firstname}}</p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td><a href="/logout">log off</a></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+
+        <!-- ************************* -->
+        <!-- The Post of massages -->
+        <!-- ************************* -->
+
+        <div class="Contain">
+            <form action="/wall/postcreate" method="post">
+                {% csrf_token %}
+                <textarea id="textarea" cols="100%" rows="5" name="textpost"></textarea>
+                <div>
+                    <input type="submit" value="Post a Massage" id="submit2" />
+                </div>
+                <input type="hidden" name="user_id" value="{{user.id}}">
+            </form>
+
+        </div>
+
+        <!-- ************************* -->
+        <!-- The dispaly of Post massages -->
+        <!-- ************************* -->
+
+
+
+        {% for message in allmasseges reversed %}
+        <div>
+            <h4>{{message.user_msg_id.firstname}} {{message.user_msg_id.lastname}} -
+                {{message.user_msg_id.created_at}}
+            </h4>
+
+            <p>{{message.msg}}</p>
+
+            <!-- ************************* -->
+            <!-- The created of comment massages -->
+            <!-- ************************* -->
+
+            {% for comment in message.commit.all %}
+
+
+
+            <p>{{comment.coment}}</p>
+
+
+
+            {% endfor %}
+
+
+
+
+            <!-- ************************* -->
+            <!-- The dispaly of comment massages -->
+            <!-- ************************* -->
+
+
+
+
+            <form action="/wall/createcomment/{{message.id}}" method="post">
+                {% csrf_token %}
+                <h4>Post a Comment</h4>
+                <textarea id="textarea" cols="100%" rows="5" name="textcomment"></textarea>
+                <div id="submit">
+                    <input type="submit" value="Post a Comment" id="submit2" />
+                </div>
+                <input type="hidden" name="user_id" value="{{user.id}}">
+            </form>
+
+            <form action="/wall/deletecomment/{{message.id}}" method="post">
+                {% csrf_token %}
+
+                <div id="submit">
+                    <input type="submit" value="Delete" id="submit2" />
+                </div>
+                <input type="hidden" name="user_id" value="{{user.id}}">
+            </form>
+
+        </div>
+        {% endfor %}
+
+
+
+    </section>
+</body>
+
+</html>

@@ -16,7 +16,10 @@
     <div class="right">
       <h1>Add a Book</h1>
 
-      <!--  for add a book to tables in Book page -->
+      <!--****************************************-->
+      <!--  for add a book to table in Book page -->
+      <!--****************************************-->
+
       <form action="/addbooks" method="post">
         {%csrf_token%}
         <div class="syntex">
@@ -31,53 +34,82 @@
           <input type="submit" value="Add Book" />
         </div>
       </form>
-      <form action="deletebooks" method="post">
+
+      <!--****************************************-->
+      <!--  for delete a book from table-->
+      <!--****************************************-->
+
+      <form action="/deletebooks" method="post">
         {%csrf_token%}
+        <h1>Delete a Book</h1>
         <input type="submit" value="Remove All Book" />
       </form>
 
+      <!--****************************************-->
+      <!--  for delete a specific book-->
+      <!--****************************************-->
 
-      <form action="DSBooks" method="post">
+      <form action="/DSBooks" method="post">
         {%csrf_token%}
-        <select name="selectD">
+        <select name="select_delete">
           <option value="" disabled selected>- Select on book for Delete/Update -</option>
           {% for i in book1 %}
           <option value="{{i.id}}">{{i.title}}</option>
-          <input type="hidden" name="hidder" value="{{i.id}}">
           {% endfor %}
-          <input type="submit" value="Remove Select Book" />
         </select>
+        <input type="submit" value="Remove Select Book" />
       </form>
       <br>
-      <form action="USBooks" method="post">
+
+      <!--****************************************-->
+      <!--  for update a specific book-->
+      <!--****************************************-->
+
+      <form action="/USBooks" method="post">
         {%csrf_token%}
-        <select name="selectE">
+        <h1>Update a Book</h1>
+        <div class="syntex">
+          <p>Title <input type="text" name="title" required maxlength="15" /></p>
+        </div>
+        <div class="syntex">
+          <span>Description
+            <textarea name="desc" cols="30" rows="4" required maxlength="50"></textarea>
+          </span>
+        </div>
+        <select name="select_update">
           <option value="" disabled selected>- Select on book for Delete/Update -</option>
           {% for i in book1 %}
           <option value="{{i.id}}">{{i.title}}</option>
-          <input type="hidden" name="hidder" value="{{i.id}}">
           {% endfor %}
-          <input type="submit" value="Update Select Book" />
         </select>
+        <input type="submit" value="Update Select Book" />
       </form>
-
-
 
     </div>
 
     <div class="left">
 
-      <!-- table for view a books that exit in database -->
+      <!--****************************************-->
+      <!--table for view a books that exit in database-->
+      <!--****************************************-->
+
       <table>
+
+        <!--****************************************-->
         <!-- used for get a attribute from a Book
-        but a allbook(keys many to many) => get it from firstpage function in view by send a context -->
+        but a allbook(keys many to many) => get it from firstpage function
+        in view by send a context -->
+        <!--****************************************-->
+
         {%for result in book1%}
         <tr>
           <!-- used a hidden input for  -->
           <td>{{result.id}}</td>
           <td>{{result.title}}</td>
-
+          <!--****************************************-->
           <!-- result.id => print a id for book and i was used it to send in url => view_books/<int:id>/ -->
+          <!--****************************************-->
+
           <td><a href="/view_books/{{result.id}}"> View</a></td>
         </tr>
         {%endfor%}
