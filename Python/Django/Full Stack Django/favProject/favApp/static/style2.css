@@ -1,0 +1,32 @@
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(185, 172, 172);
+}
+
+.left,
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#book_title{
+    border: 2px solid black;
+    padding:10px;
+    width: fit-content;
+}
+.pageOne,.pageTwo{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.right_contain,.left_contain{
+    margin: 20px;
+    border: 1px dashed rgb(216, 211, 206) ;
+    padding: 10px;
+}

@@ -25,9 +25,13 @@
                 <table>
                     <tr>
                         <td>
+                            <!-- Used (user) -> loges.objects.get(id=id) -->
                             <p>Welcome {{user.firstname}}</p>
                         </td>
                         <td>&nbsp;</td>
+                        <!-- go to views function (logout) to remove a session
+                        hint: session just to store name of user and display in wall page 
+                        without need to store it in database -->
                         <td><a href="/logout">log off</a></td>
                     </tr>
                 </table>
@@ -39,12 +43,16 @@
         <!-- ************************* -->
 
         <div class="Contain">
+            <!-- hint: don't forget a (/wall/{function name}) -> beacuse (/wall) wirte it in progject 
+            setting to reach to firstapp -->
             <form action="/wall/postcreate" method="post">
                 {% csrf_token %}
                 <textarea id="textarea" cols="100%" rows="5" name="textpost"></textarea>
                 <div>
                     <input type="submit" value="Post a Massage" id="submit2" />
                 </div>
+                <!-- used (hidden) for catch a id after render a page in function  (MainPage)
+                so i send a user in context to used it in postcreate function -->
                 <input type="hidden" name="user_id" value="{{user.id}}">
             </form>
 
@@ -55,7 +63,7 @@
         <!-- ************************* -->
 
 
-
+        
         {% for message in allmasseges reversed %}
         <div>
             <h4>{{message.user_msg_id.firstname}} {{message.user_msg_id.lastname}} -

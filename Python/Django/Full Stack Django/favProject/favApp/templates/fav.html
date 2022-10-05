@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+
+</head>
+
+<body>
+
+    <!-- ************************* -->
+    <!-- The Navbar For Main Page -->
+    <!-- ************************* -->
+
+    <nav>
+        <div class="left">
+            <h3>Welcome <span> -</span></h3>
+            <p>&nbsp;[ {{user.firstname}} ]</p>
+        </div>
+
+        <div class="right">
+            <a href="/books/logout">Log Out</a>
+        </div>
+    </nav>
+
+    <section>
+
+
+        <!-- ************************* -->
+        <!-- Add book -->
+        <!-- ************************* -->
+        <div class="left_contain">
+            <h3>Add a Favorite Book</h3>
+            <form action="/books/create_book" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>
+                            <p> Title</p>
+                        </td>
+                        <td><input type="text" name="title" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p> Description </p>
+                        </td>
+                        <td>
+                            <textarea cols="21" rows="5" name="desc"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <input type="submit" name="submit" value="Add Book" id="submit" />
+                </div>
+
+
+            </form>
+        </div>
+
+
+        <div class="right_contain">
+            <h2>All Books</h2>
+            {% for B in book %}
+
+            <p><a href="/books/{{B.id}}">{{B.title}}</a></p>
+            <p>(Add by {{B.uploaded_by.firstname}} {{B.uploaded_by.lastname}})</p>
+
+         
+
+            {% if user in B.users_who_like.all %}
+                <p>this is one of your Favorites </p>
+
+                <form action="/deletefavor/{{B.id}}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete a Book" />
+                </form>
+                
+            {% else %}
+                <p><a href="/addfavor/{{B.id}}">Add a Favorite</a></p>
+            {% endif %}
+            
+            <div>
+                <p>************************</p>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+
+</body>
+
+</html>

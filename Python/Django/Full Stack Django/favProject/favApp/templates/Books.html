@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style2.css" /> -->
+
+</head>
+
+<body>
+
+    <!-- ************************* -->
+    <!-- The Navbar For Main Page -->
+    <!-- ************************* -->
+
+    <nav>
+        <div class="left">
+            <h3>Welcome <span> -</span></h3>
+            <p>&nbsp;[ {{request.session.UserReg}} ]</p>
+        </div>
+
+        <div class="right">
+            <a href="/books/logout">Log Out</a>
+        </div>
+    </nav>
+
+    <section>
+        {% if book.uploaded_by.id == request.session.userid %}
+
+        <!-- ************************* -->
+        <!-- OnePage -> who is Favorate book -->
+        <!-- ************************* -->
+
+        <div class="pageOne">
+            <!-- ************************* -->
+            <!-- left_contain -->
+            <!-- ************************* -->
+            <div class="left_contain">
+
+                <h2 id="book_title">Book Name :{{book.title}}</h2>
+                <p>Added by :{{book.uploaded_by.firstname}} {{book.uploaded_by.lastname}}</p>
+                <p>Description:{{book.desc}}</p>
+
+                <p>Added on :{{book.uploaded_by.created_at}}</p>
+                <p>Last updated on :{{book.uploaded_by.updated_at}}</p>
+
+                <form action="/books/update/{{book.id}}" method="post">
+                    {%csrf_token%}
+                    <table>
+                        <td>
+                            <p> Description </p>
+                        </td>
+                        <td>
+                            <textarea cols="21" rows="5" name="desc"></textarea>
+                        </td>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Update" name="update">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+                <form action="/books/delete/{{book.id}}" method="post">
+                    {%csrf_token%}
+                    <input type="submit" value="delete" name="delete">
+                </form>
+
+            </div>
+
+            <!-- ************************* -->
+            <!-- right_contain -->
+            <!-- ************************* -->
+            <div class="right_contain">
+
+                <h2 style="border-bottom:2px solid black">Users who likes this Books</h2>
+                {% for x in book.users_who_like.all%}
+                {% if x.uploaded_by.id != request.session.userid %}
+
+                <p> {{x.id}} - {{x.firstname}} {{x.lastname}}</p>
+
+                {%else%}
+                <p> {{x.id}} - {{x.firstname}} {{x.lastname}} <a href="#">Unfavorite</a></p>
+
+                {%endif%}
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+
+        <!-- ************************* -->
+        <!-- TwoPage -->
+        <!-- ************************* -->
+
+        <div class="pageTwo">
+
+            <!-- ************************* -->
+            <!-- left_contain -->
+            <!-- ************************* -->
+
+            <div class="left_contain">
+                <h3 style="border-bottom:2px solid black">Book Name :{{book.title}}</h3>
+                <p>Added by :{{book.uploaded_by.firstname}} {{book.uploaded_by.lastname}}</p>
+                <p>Added on :{{book.uploaded_by.created_at}}</p>
+                <p>Last updated on :{{book.uploaded_by.updated_at}}</p>
+                <p>Description :{{book.desc}}</p>
+                <!-- ************************* -->
+                <!-- right_contain -->
+                <!-- ************************* -->
+
+            </div>
+            <div class="right_contain">
+
+                <h3 style="border-bottom:2px solid black">Users who likes this Books</h3>
+                {% for x in allbooks%}
+                {% if x.uploaded_by.id == request.session.userid %}
+
+                <p> {{x.id}} - {{x.uploaded_by.firstname}} {{x.uploaded_by.lastname}}</p>
+
+                {%else%}
+                <p> {{x.id}} - {{x.uploaded_by.firstname}} {{x.uploaded_by.lastname}}</p>
+
+                {%endif%}
+                {% endfor %}
+            </div>
+        </div>
+
+
+        {% endif %}
+
+    </section>
+
+
+
+
+</body>
+
+</html>
