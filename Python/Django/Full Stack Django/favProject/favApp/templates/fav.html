@@ -25,7 +25,8 @@
         </div>
 
         <div class="right">
-            <a href="/books/logout">Log Out</a>
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <a href="/logout">Log Out</a>
         </div>
     </nav>
 
@@ -37,7 +38,7 @@
         <!-- ************************* -->
         <div class="left_contain">
             <h3>Add a Favorite Book</h3>
-            <form action="/books/create_book" method="post">
+            <form action="/fav/create_book" method="post">
                 {% csrf_token %}
                 <table>
                     <tr>
@@ -61,28 +62,39 @@
 
 
             </form>
+
+            <!-- This for message if there no value enter in [ Title , Description ] Field -->
+            <!-- Related with (Views) -->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
         </div>
 
 
         <div class="right_contain">
             <h2>All Books</h2>
-            {% for B in book %}
+            {% for book in all_book %}
 
-            <p><a href="/books/{{B.id}}">{{B.title}}</a></p>
-            <p>(Add by {{B.uploaded_by.firstname}} {{B.uploaded_by.lastname}})</p>
+            <p><a href="/books/{{book.id}}">{{book.title}}</a></p>
+            <p>(Add by {{book.uploaded_by.firstname}} {{book.uploaded_by.lastname}})</p>
 
          
 
-            {% if user in B.users_who_like.all %}
+            {% if user in book.users_who_like.all %}
                 <p>this is one of your Favorites </p>
 
-                <form action="/deletefavor/{{B.id}}" method="post">
+                <!-- <form action="/deletefavor/{{book.id}}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Delete a Book" />
-                </form>
+                </form> -->
                 
             {% else %}
-                <p><a href="/addfavor/{{B.id}}">Add a Favorite</a></p>
+                <p><a href="/fav/{{book.id}}">Add a Favorite</a></p>
             {% endif %}
             
             <div>

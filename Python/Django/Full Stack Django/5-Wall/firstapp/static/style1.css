@@ -15,22 +15,18 @@ nav {
     margin: 6%;
 }
 
-#submit {
-    display: flex;
-    justify-content: flex-end;
-}
-
 #submit2 {
     color: cornflowerblue;
     box-shadow: 2px 1px brown;
     background-color: blanchedalmond;
     padding: 5px;
+    margin-top: 2px;
 }
 #p_psot{
     border: 1px dashed slateblue;
     width: fit-content;
   
 }
-/* .masseges{
+.masseges{
   margin-left: 10px;
-} */
+} 

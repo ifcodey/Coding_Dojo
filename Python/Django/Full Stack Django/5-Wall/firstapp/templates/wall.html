@@ -63,29 +63,33 @@
         <!-- ************************* -->
 
 
-        
-        {% for message in allmasseges reversed %}
-        <div>
-            <h4>{{message.user_msg_id.firstname}} {{message.user_msg_id.lastname}} -
-                {{message.user_msg_id.created_at}}
-            </h4>
-
-            <p>{{message.msg}}</p>
-
-            <!-- ************************* -->
-            <!-- The created of comment massages -->
-            <!-- ************************* -->
-
-            {% for comment in message.commit.all %}
-
-
-
-            <p>{{comment.coment}}</p>
-
-
-
-            {% endfor %}
-
+        <div class="comment">
+            {% for message in allmasseges reversed %}
+            <div>
+                <h4>{{message.user_who_msg.firstname}} {{message.user_who_msg.lastname}} -
+                    {{message.user_who_msg.created_at}}
+                </h4>
+    
+                <h4 style="color:rgb(76, 92, 183);">{{message.message}}</h4>
+    
+                <!-- ************************* -->
+                <!-- The created of comment massages -->
+                <!-- ************************* -->
+    
+                {% for comment in message.commit.all %}
+    
+    
+                <div>
+                    <p style="color:rgb(183, 76, 121);">{{comment.coment}}</p>
+                </div>
+                
+    
+    
+    
+                {% endfor %}
+    
+        </div>
+       
 
 
 

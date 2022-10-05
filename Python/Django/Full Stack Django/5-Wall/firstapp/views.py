@@ -45,8 +45,8 @@ def postcreate(request):
     text = request.POST['textpost']
 
     msgs.objects.create(
-        msg=text,
-        user_msg_id=user
+        message=text,
+        user_who_msg=user
     )
     # Get a last item in Data  == Login loges
 
@@ -63,8 +63,8 @@ def createcomment(request, id):
 
     comments.objects.create(
         coment=text,
-        user_commit_id=user,
-        msg_commit_id=msgs.objects.get(id=id)
+        user_who_commit=user,
+        commit_on_message=msgs.objects.get(id=id)
 
         # msg_commit_id=user,
     )

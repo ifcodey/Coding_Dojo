@@ -4,9 +4,9 @@ import re
 import datetime
 
 
-# ---------------------------------
-# ------- Validtion Section -------
-# ---------------------------------
+# -------------------------------------------
+# ------- Validtion Section User Table-------
+# -------------------------------------------
 
 class LoginManager(models.Manager):
     def basic_validator(self, postData):
@@ -48,15 +48,18 @@ class User(models.Model):
 # ------- Validtion Section -> under direct a speacial table -------
     objects = LoginManager()
 
+# -------------------------------------------
+# ------- Validtion Section Book Table-------
+# -------------------------------------------
 
-# class BookManager(models.Manager):
-#     def basic_validator(self, postData):
-#         errors = {}
-#         if postData['title'] == "":
-#             errors["title"] = "Title is required"
-#         if len(postData['desc']) < 5:
-#             errors["desc"] = "Description should be at least 5 characters"
-#         return errors
+class BookManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        if postData['title'] == "":
+            errors["title"] = "Title is required"
+        if len(postData['desc']) < 5:
+            errors["desc"] = "Description should be at least 5 characters"
+        return errors
 
 
 class Book(models.Model):
@@ -70,4 +73,4 @@ class Book(models.Model):
 
 
 # ------- Validtion Section -> under direct a speacial table -------
-# objects = BookManager()
+    objects = BookManager()
