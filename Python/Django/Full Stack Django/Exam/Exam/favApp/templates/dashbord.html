@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'show.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+    <!-- CSS only -->
+    
+
+
+</head>
+
+<body>
+    <!-- ************************* -->
+    <!-- The Navbar For Main Page -->
+    <!-- ************************* -->
+
+    <nav>
+        <div class="left">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <h3>Arbortrary</h3>
+        </div>
+
+        <div class="right">
+        <p><a href="/user">My Trees</a>&nbsp;</p>
+            <h3>Welcome <span> -</span></h3>
+            <!-- <p>&nbsp;[ {{request.session.UserReg}} ]</p> -->
+            <p>&nbsp;[ {{users.firstname}} ]</p>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="left1">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <p>A site track a random Trees</p>
+        </div>
+
+        <div class="right1">
+            <a href="/new/tree"><button>Plane a Tree</button></a>
+            <a href="/logout"><button>logout</button></a>
+            <!-- <p>&nbsp;[ {{user.name}} ]</p> -->
+            <!-- <p>&nbsp;[ {{request.session.UserReg}} ]</p> -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <table id="customers">
+            <!-- species -> Arb table-->
+            <!-- some_user -> user table-->
+            
+            <tr>
+                <td scope="col">Species</td>
+                <td scope="col">Planed_by</td>
+                <td scope="col">Actions</td>
+            </tr>
+            {%for specie in species%}
+            <tr>
+                <td scope="col">{{specie.species}}</td>
+                <td scope="col">{{specie.planded_by.firstname}} {{specie.planded_by.lastname}}</td>
+                <td scope="col"><a href="/show/{{specie.id}}/{{specie.planded_by.id}}">details</a></td>
+                <input type="hidden" name="hider" value="{{specie.id}}">
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

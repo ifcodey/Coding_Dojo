@@ -1,0 +1,21 @@
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left,
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+button {
+    color: black;
+    box-shadow: 1px 1px black;
+    background-color: rgb(248, 248, 245);
+}

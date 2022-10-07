@@ -25,6 +25,10 @@ def register(request):
     # Validator for User Table
     # ---------------
     errors = User.objects.basic_validator(request.POST)
+    users = User.objects.all()
+    for user in users:
+        errors['email'] = "This email already exists in our data"
+        
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'show.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+    <!-- CSS only -->
+
+
+
+</head>
+
+<body>
+    <!-- ************************* -->
+    <!-- The Navbar For Main Page -->
+    <!-- ************************* -->
+
+    <nav>
+        <div class="left">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <h3>Arbortrary</h3>
+        </div>
+
+        <div class="right">
+            <p><a href="/user">My Trees</a>&nbsp;</p>
+            <h3>Welcome <span> -</span></h3>
+            <p>&nbsp;[ {{request.session.UserReg}} ]</p>
+            <!-- <p>&nbsp;[ {{users.firstname}} ]</p> -->
+        </div>
+    </nav>
+
+    <nav>
+        <div class="left1">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <p>A site track a random Trees</p>
+        </div>
+
+        <div class="right1">
+            <a href="/dashbord/{{request.session.userid}}"><button>Dashboard</button></a>
+            <a href="/logout"><button>logout</button></a>
+            <!-- <p>&nbsp;[ {{user.name}} ]</p> -->
+            <!-- <p>&nbsp;[ {{request.session.UserReg}} ]</p> -->
+        </div>
+    </nav>
+
+    <div class="container2">
+        <div>
+            <h1>Weeping <span style="color: rgb(99, 64, 64) ;">{{arbortary.species}}</span> Planted by <span style="color:  rgb(99, 64, 64) ;">{{user.firstname}}</span></h1>
+        </div>
+        <div>
+            <h2>Where :{{arbortary.location}}</h2>
+        </div>
+        <div>
+            <h3>When :{{arbortary.date}}</h3>
+        </div>
+        <div>
+            <h4>Reason :{{arbortary.reason}}</h4>
+        </div>
+    </div>
+
+</body>
+
+</html>

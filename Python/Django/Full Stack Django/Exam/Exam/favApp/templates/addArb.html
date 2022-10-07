@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'process.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+    
+</head>
+
+<body>
+    <!-- ************************* -->
+    <!-- The Navbar For Main Page -->
+    <!-- ************************* -->
+
+    <nav>
+        <div class="left">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <h3>Arbortrary</h3>
+        </div>
+
+        <div class="right">
+            <p><a href="/user">My Trees</a>&nbsp;</p>
+            <h3>Welcome <span> -</span></h3>
+            <p>&nbsp;[ {{request.session.UserReg}} ]</p>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="left1">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <p>A site track a random Trees</p>
+        </div>
+
+        <div class="right1">
+            <a href="/dashbord/{{request.session.userid}}"><button>Dashboard</button></a>
+            <a href="/logout"><button>logout</button></a>
+            <!-- <p>&nbsp;[ {{user.name}} ]</p> -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Arbortrary Plant a Tree</h1>
+        <form action="/new/addArb_create"  method="post">
+            {%csrf_token%}
+            <p>Species</p>
+            <input type="text" name="species">
+
+            <p>Location</p>
+            <input type="text" name="location">
+
+            <p>Reason</p>
+            <input type="text" name="reason">
+
+            <p>Date a Plant</p>
+            <input type="date" name="date">
+            <div>
+                <input type="submit" name="plant" value="plant">
+            </div>
+        </form>
+        <!-- message of error -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+
+
+</body>
+
+</html>

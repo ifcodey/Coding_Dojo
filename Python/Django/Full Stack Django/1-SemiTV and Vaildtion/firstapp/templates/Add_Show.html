@@ -22,33 +22,28 @@
         <!-- ================================== -->
         <!-- Validation -->
         <!-- ================================== -->
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+
+
         <!-- ================================== -->
         <form action="/adddata" method="post">
             {%csrf_token%}
             <!-- 1 -->
             <div>
                 <p>Title</p>
-                <input type="text" name="title" required maxlength="15" />
+                <input type="text" name="title" />
             </div>
 
             <!-- 2.1 -->
             <div class="field_input">
                 <div>
                     <p>Nework</p>
-                    <input type="text" name="nets" required maxlength="8" />
+                    <input type="text" name="nets" />
                 </div>
 
 
                 <div>
                     <p>Release Date</p>
-                    <input type="date" name="release_date" required />
+                    <input type="date" name="release_date" />
                 </div>
 
             </div>
@@ -62,8 +57,15 @@
 
 
         </form>
+     
     </section>
-
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 
 </html>

@@ -51,14 +51,14 @@ def addshow(request):
         for key, value in errors.items():
             messages.error(request, value)
         # redirect the user back to the form to fix the errors
-        return redirect('/')
-
+        return redirect('/shows/new')
+    else:
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    Show.objects.create(title=request.POST['title'], nets=request.POST['nets'],
-                        release_date=request.POST['release_date'], desc=request.POST['desc'])
-    ends = Show.objects.last()
-    return redirect(f'shows/{ends.id}')
+        Show.objects.create(title=request.POST['title'], nets=request.POST['nets'],
+                            release_date=request.POST['release_date'], desc=request.POST['desc'])
+        ends = Show.objects.last()
+        return redirect(f'shows/{ends.id}')
 
 # ===========================================================
 # ******** TV_Show Page ********
@@ -88,9 +88,9 @@ def edit(request, id):
 def update(request):
     get_id_Editpage = Show.objects.get(id=request.POST['hide'])
     get_id_Editpage.title = request.POST['title']
-    get_id_Editpage.network = request.POST['nets']
+    get_id_Editpage.nets = request.POST['nets']
     get_id_Editpage.release_date = request.POST['release_date']
-    get_id_Editpage.description = request.POST['desc']
+    get_id_Editpage.desc = request.POST['desc']
     get_id_Editpage.save()
     return redirect(f'shows/{get_id_Editpage.id}')
 
