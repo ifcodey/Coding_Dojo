@@ -23,4 +23,4 @@ C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project>python mana
 C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project>
 
 
-call C:\Users\Codey\Desktop\CodingDojo\Python\MyEnvironment\djangoPy3Env\Scripts\activate
+call C:\Users\Codey\OneDrive\Desktop\CodingDojo\Python\MyEnvironment\djangoPy3Env\Scripts\Activate

@@ -1,0 +1,67 @@
+section {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 5%;
+
+}
+
+form {
+    border: 1px solid silver;
+}
+
+#goback {
+    display: flex;
+    justify-content: end;
+}
+
+h1 {
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 5%;
+}
+
+.field_input {
+    padding: 10px;
+    margin: 10px;
+
+
+}
+
+.field_input>div {
+    padding: 10px;
+
+}
+
+input,
+textarea {
+    box-shadow: 1px 1px cadetblue;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left,
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a {
+    margin-left: 20px;
+}

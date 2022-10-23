@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add_edit.css' %}">
+    <!-- <link rel="stylesheet" href="../static/style1.css" /> -->
+</head>
+
+<body>
+     <nav>
+        <div class="left">
+            <!-- go to url -> ( /books/logout ) and delete a session -> redirect to login page -->
+            <p></P>
+        </div>
+
+        <div class="right goback">
+            <a href="/shows/new">TV Shows</a>
+            <a href="/logout" >logout</a>
+        </div>
+    </nav>
+    <h1>Add a New Show</h1>
+    <section>
+
+        <!-- form -->
+        <!-- ================================== -->
+        <!-- Validation -->
+        <!-- ================================== -->
+
+
+        <!-- ================================== -->
+        <form action="/adddata" method="post">
+            {%csrf_token%}
+            <!-- 1 -->
+             <div class="field_input">
+            <div>
+                <span>Title</span>
+                <input type="text" name="title" />
+            </div>
+
+            <!-- 2.1 -->
+         
+                <div>
+                    <span>Nework</span>
+                    <input type="text" name="nets" />
+                </div>
+
+            
+            
+
+                <div>
+                    <span>Release Date</span>
+                    <input type="date" name="release_date" />
+                </div>
+            <!-- 3 -->
+            <span>Descrispantion</p>
+            <textarea cols="30" rows="5" name="desc"></textarea>
+
+            <div class="footer">
+                <input type="submit" value="Create" />
+            </div>
+</div>
+
+        </form>
+     
+    </section>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+
+</html>
