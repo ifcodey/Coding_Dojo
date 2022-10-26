@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.*;
 
 public class AlfredQuotes {
@@ -12,6 +13,12 @@ public class AlfredQuotes {
         return "Hello ," + name + " - Lovely to see you.";
     }
 
+    // NINJA BONUS
+    // See the specs to overload the guessGreeting method
+    public String guestGreeting(String name,String dayPeriod){
+
+        return "Good time  : " + dayPeriod + ", nice to meet you :" + name; 
+    }
     public String dateAnnouncement() {
         Date date = new Date();
         return "It is currently - " + date;
@@ -30,12 +37,7 @@ public class AlfredQuotes {
         }
     }
 
-    // NINJA BONUS
-    // See the specs to overload the guessGreeting method
-    public guessGreeting(String name , String dayPeriod){
 
-        return "Good time  : " + dayPeriod + ", nice to meet you :" + name; 
-    }
 
     // SENSEI BONUS
     // Write your own AlfredQuote method using any of the String methods you have
