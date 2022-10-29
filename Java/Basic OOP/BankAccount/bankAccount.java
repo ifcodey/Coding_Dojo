@@ -72,4 +72,16 @@ public class bankAccount {
         System.out.println(" Your Total Balance is equal :" + totalMoney);
     }
 
+    private String accountNumber() {
+        String num = "0123456789";
+        String randNumber = "";
+        Random rand = new Random();
+        for (int i = 0; i < 10; i++) {
+            char number = num.charAt(rand.nextInt(10));
+            randNumber += number;
+        }
+        accountNumber = randNumber;
+        return randNumber;
+    }
+
 }
