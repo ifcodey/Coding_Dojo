@@ -1,0 +1,18 @@
+@charset "windows-1256";
+
+
+body {
+    margin:25% 20% ;
+}
+h1 {
+    color: #181865;
+}
+
+.div1 {
+    display:flex;
+    justify-content: space-between;
+}
+
+.hje {
+    color:red;
+}
