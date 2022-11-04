@@ -1,0 +1,10 @@
+1 - first step :
+-----------------
+netstat -ano | findstr :<8080>
+
+hint: now git a PID and put it in 2.
+
+2 - second step :
+-----------------
+
+taskkill /PID <PID> /F

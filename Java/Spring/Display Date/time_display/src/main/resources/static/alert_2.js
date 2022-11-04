@@ -1,5 +1,5 @@
 
-function click1(){
+function runMsg2(){
     alert("Hello People");
 }
 

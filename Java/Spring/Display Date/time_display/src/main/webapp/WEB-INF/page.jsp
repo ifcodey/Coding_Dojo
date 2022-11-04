@@ -20,8 +20,9 @@
 </head>
 <body>
 <h1>The Time in Each Pages</h1>
-<p><a href="date">The Date of Page Shows</a></p>
-<p><a href="time">The Time of Page Shows</a></p>
+<p><a href="dates">The Date of Page Shows</a></p>
+
+<p><a href="times">The Time of Page Shows</a></p>
 <%--<p>Hour Times :  <c:out value="${gets}" /></p>--%>
 
 </body>

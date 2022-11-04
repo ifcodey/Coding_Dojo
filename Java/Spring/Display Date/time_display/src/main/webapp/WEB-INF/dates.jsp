@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=windows-1256"
-         pageEncoding="windows-1256" import="java.time.*" import="java.util.*"%>
+         pageEncoding="windows-1256" import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -7,12 +7,12 @@
 <head>
     <meta charset="windows-1256">
     <link rel="stylesheet" href=""/>
-    <title>The Time</title>
+    <title>The Date</title>
 </head>
 <body>
-<h1>The Time :</h1>
-<p>Hour Times :  <c:out value="${gettime}" /></p>
-<p class="hje" onload="runMsg2()">The local time is <%=  LocalTime.now() %></p>
 
+<h1>The Date :</h1>
+<p>Date :  <c:out value="${getdate}" /></p>
+<p class="hje" onload="runMsg()">The time is: <%= new Date() %></p>
 </body>
 </html>
