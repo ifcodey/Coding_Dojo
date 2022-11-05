@@ -19,7 +19,9 @@
 </head>
 <body>
     <section>
-        <h3>You have visited <a href="/your_server">http:/your_server</a> ${counts}</h3>
+        <h3>You have visited by used session <a href="/your_server">http:/your_server</a> ${counts}</h3>
+        <h3>You have visited by used model <a href="/your_server">http:/your_server</a> ${countToShow}</h3>
+
         <a href="/your_server">Test another visit?</a>
     </section>
 </body>

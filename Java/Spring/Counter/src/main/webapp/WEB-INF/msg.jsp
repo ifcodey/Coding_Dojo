@@ -20,6 +20,7 @@
 <body>
 <p>
     <p> Welcome User!</p>
+    <a href="/">Back to Home page</a>
 </p>
 </body>
 </html>
