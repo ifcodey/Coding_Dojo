@@ -9,40 +9,15 @@
 <meta charset="UTF-8">
 <title>expenses</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<!-- YOUR own local CSS -->
-<link rel="stylesheet" href="main.css" />
 </head>
 <body>
 
-	<div class="container">
-		<h1>Save Travels</h1>
-		<table class="table table-light">
-			<thead>
-				<tr>
-					<td>Id</td>
-					<td>Expense</td>
-					<td>Vendor</td>
-					<td>amount</td>
-					<td>Edit</td>
-					<!-- 	<td>Delete</td> -->
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="expense" items="${allexpenses}">
-					<tr>
-						<td>${expense.id}</td>
-						<td>${expense.getName()}</td>
-						<td>${expense.getVendor()}</td>
-						<td>${expense.getAmount()}</td>
-						<td><a href="/edit/${expense.id}">edit</a></td>
-						<%-- <td><a href="/delete/${expense.id}">delete</a></td> --%>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-
-	<form:form action="/expenses" method="post" modelAttribute="expenses"
+	<form:form action="/edit/${expenseToEdit.id }" method="post"
+		modelAttribute="expenseToEdit"
 		class="form form-group border container">
+		
+		<input type="hidden" name="_method" value="put">
+
 		<p>
 			<form:label path="Name">Expense name</form:label>
 			<form:errors path="Name" />
@@ -66,7 +41,6 @@
 		</p>
 		<input type="submit" value="Submit" class="btn btn-success" />
 	</form:form>
-
 
 </body>
 </html>
