@@ -55,24 +55,24 @@ public class ExpenseController {
 			return "redirect:/expenses";
 		}
 	}
-//	
-//	@GetMapping("/edit/{id}")
-//	public String showEditExpense(@PathVariable("id") Long id, Model model) {
-//		Expense expenseToEdit = expenseService.findExpense(id);
-//		model.addAttribute("expenseToEdit", expenseToEdit);
-//		return "/edit.jsp";
-//	}
-//
-//	@PutMapping("/edit/{id}")
-//	public String editExpense(@Valid @ModelAttribute(value = "expenseToEdit") Expense expenseToEdit, BindingResult result
-//			,@PathVariable(value = "id") long id) {
-//		if (result.hasErrors()) {
-//			return "/edit.jsp";
-//		} else {
-//			expenseService.updateExpense(id, expenseToEdit);
-//			return "redirect:/expenses";
-//		}
-//	}
+	
+	@GetMapping("/edit/{id}")
+	public String showEditExpense(@PathVariable("id") Long id, Model model) {
+		Expense expenseToEdit = expenseService.findExpense(id);
+		model.addAttribute("expenseToEdit", expenseToEdit);
+		return "/edit.jsp";
+	}
+
+	@PutMapping("/edit/{id}")
+	public String editExpense(@Valid @ModelAttribute(value = "expenseToEdit") Expense expenseToEdit, BindingResult result
+			,@PathVariable(value = "id") long id) {
+		if (result.hasErrors()) {
+			return "/edit.jsp";
+		} else {
+			expenseService.updateExpense(id, expenseToEdit);
+			return "redirect:/expenses";
+		}
+	}
 //	
 //    @DeleteMapping("/delete/{id}")
 //    public String destroy(@PathVariable("id") Long id) {

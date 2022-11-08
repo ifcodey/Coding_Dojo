@@ -23,7 +23,7 @@
 					<td>Expense</td>
 					<td>Vendor</td>
 					<td>amount</td>
-					<!-- 	<td>Edit</td> -->
+					<td>Edit</td>
 					<!-- 	<td>Delete</td> -->
 				</tr>
 			</thead>
@@ -34,7 +34,7 @@
 						<td>${expense.getName()}</td>
 						<td>${expense.getVendor()}</td>
 						<td>${expense.getAmount()}</td>
-						<%-- <td><a href="/edit/${expense.id}">edit</a></td> --%>
+						<td><a href="/edit/${expense.id}">edit</a></td>
 						<%-- <td><a href="/delete/${expense.id}">delete</a></td> --%>
 				</c:forEach>
 			</tbody>
