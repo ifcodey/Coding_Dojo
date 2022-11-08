@@ -1,77 +1,71 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- New line below to use the JSP Standard Tag Library -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!-- New line below to use the JSP Standard Tag Library -->
-<!-- Validation -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isErrorPage="true"%>
-
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8" />
-<title>Book Page</title>
-
-<!-- for Bootstrap CSS -->
+<meta charset="UTF-8">
+<title>expenses</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" href="main.css" />
-
-<!-- For any Bootstrap that uses JS or jQuery-->
-<script src="/webjars/jquery/jquery.min.js"></script>
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-
-
 </head>
-
 <body>
 
+	<div class="container">
+		<h1>Save Travels</h1>
+		<table class="table table-light">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Expense</td>
+					<td>Vendor</td>
+					<td>amount</td>
+					<!-- 	<td>Edit</td> -->
+					<!-- 	<td>Delete</td> -->
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="expense" items="${allexpenses}">
+					<tr>
+						<td>${expense.id}</td>
+						<td>${expense.getName()}</td>
+						<td>${expense.getVendor()}</td>
+						<td>${expense.getAmount()}</td>
+						<%-- <td><a href="/edit/${expense.id}">edit</a></td> --%>
+						<%-- <td><a href="/delete/${expense.id}">delete</a></td> --%>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
-	<table>
-		<tr>
-			<td>Expense</td>
-			<td>Vendor</td>
-			<td>Amount</td>
-		</tr>
-
-		<c:forEach var="book" items="${books}">
-			<tr>
-				<td>expense :<a href="/books/${book.id}"><c:out
-							value="${book.expense}"></c:out></a></td>
-				<td>vendor : <c:out value="${book.vendor}"></c:out></td>
-				<td>amount :<c:out value="${book.amount }"></c:out></td>
-			</tr>
-		</c:forEach>
-	</table>
-	<br>
-	<h1>New Expense</h1>
-	<br>
-	<form:form action="/show" method="post" modelAttribute="bookss">
+	<form:form action="/expenses" method="post" modelAttribute="expenses"
+		class="form form-group border container">
 		<p>
-			<form:label path="expenseName">Expense</form:label>
-			<form:errors path="expenseName" />
-			<form:input path="expenseName" />
+			<form:label path="Name">Expense name</form:label>
+			<form:errors path="Name" />
+			<form:input class="form-control" path="Name" />
 		</p>
 		<p>
 			<form:label path="vendor">Vendor</form:label>
 			<form:errors path="vendor" />
-			<form:textarea path="vendor" />
+			<form:input class="form-control" path="vendor" />
 		</p>
 		<p>
-			<form:label path="amount">Pages</form:label>
-			<form:errors path="amount" />
-			<form:input type="number" path="amount" />
+			<form:label path="description">Description</form:label>
+			<form:errors path="description" />
+			<form:textarea class="form-control" path="description" />
 		</p>
-		<input type="submit" value="Submit" />
+
+		<p>
+			<form:label path="amount">amount</form:label>
+			<form:errors path="amount" />
+			<form:input class="form-control" type="number" path="amount" />
+		</p>
+		<input type="submit" value="Submit" class="btn btn-success" />
 	</form:form>
-
-
-
 
 
 </body>

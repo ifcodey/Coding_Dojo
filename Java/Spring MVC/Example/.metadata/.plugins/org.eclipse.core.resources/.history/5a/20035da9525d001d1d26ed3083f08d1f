@@ -1,0 +1,5 @@
+package com.ifcodey.mvc.services;
+
+public class BookService {
+
+}

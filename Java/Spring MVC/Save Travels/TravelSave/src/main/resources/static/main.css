@@ -1,6 +1,6 @@
 @charset "windows-1256";
 
-p{
-	color:red;
-	
+h1 {
+	color: red;
+	text-align: center;
 }

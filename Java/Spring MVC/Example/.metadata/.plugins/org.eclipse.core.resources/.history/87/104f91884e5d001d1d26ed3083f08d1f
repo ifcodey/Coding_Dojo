@@ -1,0 +1,5 @@
+package com.ifcodey.mvc.repositories;
+
+public interface BookRepository {
+
+}

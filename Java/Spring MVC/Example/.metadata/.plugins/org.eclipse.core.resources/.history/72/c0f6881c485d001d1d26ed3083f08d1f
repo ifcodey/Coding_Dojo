@@ -1,0 +1,5 @@
+package com.ifcodey.models;
+
+public class Book {
+
+}

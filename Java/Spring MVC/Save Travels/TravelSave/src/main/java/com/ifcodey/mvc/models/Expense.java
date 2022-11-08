@@ -20,42 +20,32 @@ public class Expense {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	public Long getId() {
-		return id;
-	}
-
-//--------------------------------------------------------------
-//      the validation
-//--------------------------------------------------------------
-
+	
 	@NotNull
-	@Size(min = 1, max = 50, message = "The expense name must be at least 1 characters.")
-	private String expense;
-
+	@Size(min = 3, max = 50, message = " - The vendor name must be at least 3 characters.")
+	private String name;
+	
 	@NotNull
-	@Size(min = 1, max = 50, message = "The vendor name must be at least 1 characters.")
+	@Size(min = 3, max = 50, message = " - The vendor name must be at least 3 characters.")
 	private String vendor;
-
-	@NotNull(message = "Amount not must be null")
-	@Min(value = 0, message = "Amount must be at least 1")
+	
+	@NotNull(message = " - Amount not must be null")
+	@Min(value = 1,  message="- amount must be at least 1$")
 	private double amount;
-
+	
 	@NotNull
-	@Size(min = 5, max = 50, message = "description must be at least 5 characters.")
+	@Size(min = 5, max = 50, message = " - description must be at least 5 characters.")
 	private String description;
-
 	// This will not allow the createdAt column to be updated after creation
+	
+	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
-
-//--------------------------------------------------------------
-//      function to create a date when create/update on objects
-//--------------------------------------------------------------
-
+	
+	
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
@@ -65,32 +55,39 @@ public class Expense {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-//--------------------------------------------------------------
-//      the constructor for pass a member with value
-//--------------------------------------------------------------
 
 	public Expense() {
 	}
 
-	public Expense(Long id, @NotNull String expense, @NotNull String vendor, @NotNull Double amount,
+	public Expense(Long id, @NotNull String name, @NotNull String vendor, @NotNull Double amount,
 			@NotNull String description) {
 		super();
 		this.id = id;
-		this.expense = expense;
+		this.name = name;
 		this.vendor = vendor;
 		this.amount = amount;
 		this.description = description;
 	}
 
+
+
 //--------------------------------------------------------------
 //      other getters and setters removed for brevity
 //--------------------------------------------------------------
-	public String getExpenseName() {
-		return expense;
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
-	public void setExpenseName(String expense) {
-		this.expense = expense;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getVendor() {
@@ -133,7 +130,4 @@ public class Expense {
 		this.updatedAt = updatedAt;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 }
