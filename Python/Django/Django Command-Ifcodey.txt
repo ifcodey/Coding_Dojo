@@ -1,0 +1,26 @@
+Microsoft Windows [Version 10.0.22000.978]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django>django-admin startproject First_Django_Project
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django>cd First_Django_Project
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project>dir
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is A823-9305
+
+ Directory of C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project
+
+09/20/2022  10:12 AM    <DIR>          .
+09/20/2022  10:12 AM    <DIR>          ..
+09/20/2022  10:12 AM    <DIR>          First_Django_Project
+09/20/2022  10:12 AM               698 manage.py
+               1 File(s)            698 bytes
+               3 Dir(s)  287,991,357,440 bytes free
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project>python manage.py startapp firstapp
+
+C:\Users\Codey\Desktop\CodingDojo\Python\Django\First_Django_Project>
+
+
+call C:\Users\Codey\OneDrive\Desktop\CodingDojo\Python\MyEnvironment\djangoPy3Env\Scripts\Activate
