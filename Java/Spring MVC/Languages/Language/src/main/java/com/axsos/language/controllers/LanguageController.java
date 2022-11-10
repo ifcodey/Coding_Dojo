@@ -40,11 +40,7 @@ public class LanguageController {
 	public String index(Model model, @ModelAttribute("language") MLanguage language) {
 		List<MLanguage> allObj = languageService.allLanguage();
 		model.addAttribute("all_language", allObj);
-<<<<<<< HEAD
 		return "dashboard.jsp";
-=======
-		return "index.jsp";
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 	}
 
 	@PostMapping("/languages")
@@ -58,24 +54,14 @@ public class LanguageController {
 	}
 
 	@GetMapping("/edit/{id}")
-<<<<<<< HEAD
 	public String showLanguage(@PathVariable("id") Long id, Model model) {
-=======
-	public String showEditExpense(@PathVariable("id") Long id, Model model) {
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 		MLanguage languageToEdit = languageService.findLanguage(id);
 		model.addAttribute("languageToEdit", languageToEdit);
 		return "/edit.jsp";
 	}
-<<<<<<< HEAD
 	
 	@PutMapping("/edit/{id}")
 	public String editLanguage(@Valid @ModelAttribute(value = "languageToEdit") MLanguage languageToEdit,
-=======
-
-	@PutMapping("/edit/{id}")
-	public String editExpense(@Valid @ModelAttribute(value = "languageToEdit") MLanguage languageToEdit,
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 			BindingResult result, @PathVariable(value = "id") long id) {
 		if (result.hasErrors()) {
 			return "/edit.jsp";
@@ -85,7 +71,7 @@ public class LanguageController {
 		}
 	}
 
-<<<<<<< HEAD
+
 //	used when used form with button
 	@DeleteMapping("/deleter/{id}")
 	public String destroyButton(@PathVariable("id") Long id) {
@@ -96,10 +82,6 @@ public class LanguageController {
 	
 	@GetMapping("/delete/{id}")
 	public String destroyLink(@PathVariable("id") Long id) {
-=======
-	@DeleteMapping("/delete/{id}")
-	public String destroy(@PathVariable("id") Long id) {
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 		languageService.deleteLanguage(id);
 		return "redirect:/";
 	}
@@ -108,11 +90,7 @@ public class LanguageController {
 	public String showExpense(@PathVariable("id") Long id, Model model) {
 		MLanguage language = languageService.findLanguage(id);
 		model.addAttribute("language", language);
-<<<<<<< HEAD
 		return "/display.jsp";
-=======
-		return "/expence.jsp";
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 	}
 
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -67,17 +66,4 @@
 
 </body>
 </html>
-=======
-<%@ page language="java" contentType="text/html; charset=windows-1256"
-    pageEncoding="windows-1256"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="windows-1256">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87

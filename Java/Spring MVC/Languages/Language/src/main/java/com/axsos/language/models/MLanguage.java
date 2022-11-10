@@ -9,11 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-<<<<<<< HEAD
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
-=======
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -36,12 +35,9 @@ public class MLanguage {
 	private String creator;
 
 	@NotNull(message = " - version not should be null")
-<<<<<<< HEAD
 	@DecimalMin(value = "0.0", inclusive = false)
     @Digits(integer=3, fraction=2)
-=======
 	@Min(value = 0, message = "- version should be at least 0.1")
->>>>>>> 6ddf5258c65248ec5ccd27d85d47b0534512bc87
 	private double version;
 
 	// This will not allow the createdAt column to be updated after creation
