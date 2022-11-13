@@ -11,40 +11,43 @@
 <title>Insert title here</title>
 </head>
 <body>
-<body>
 
-	<h1>${category.name}</h1>
+
+	<h1>${category_id.name}</h1>
 	<p>
 		<a href="/">Home</a>
 	</p>
 	<hr>
 
 	<h3>Products:</h3>
+
+	<%--	view Product name--%>
 	<ul>
-		<c:forEach var="product" items="${assignedProducts}">
+		<c:forEach var="product" items="${category_id.getProducts()}">
 			<li><c:out value="${product.name}"></c:out></li>
 		</c:forEach>
 	</ul>
 	<hr>
-	
+
+	<%--	Form--%>
 	<form action="/category/${id}" method="post">
 		<h4>Add Product:</h4>
 		
 		<select name="productId" id="productId" class="input">
 		
-			<c:forEach var="product" items="${unassignedProducts}">
+			<c:forEach var="product" items="${proder}">
 				<option value="${product.id}">${product.name}</option>
 			</c:forEach>
-		</select> 
+		</select>
+
 		<input class="input" class="button" type="submit" value="Add" />
-		
 	</form>
-	
+
+	<%--	delete--%>
 	<div class="delete">
-		<form action='/category/delete/<c:out value="${category.id}"/>'
-			method="post" class="delete">
-			<input type="hidden" name="_method" value="delete"> <input
-				type="submit" value="Delete Catergory" class="btn btn-danger">
+		<form action='/category/delete/<c:out value="${category.id}"/>' method="post" class="delete">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete Catergory" class="btn btn-danger">
 		</form>
 	</div>
 	

@@ -17,27 +17,29 @@
 		<a href="/">Home</a>
 	</p>
 	<hr>
-
 	<h3>Categories:</h3>
+
+	<%--	view category name--%>
 	<ul>
 		<c:forEach var="category" items="${product_id.getCategories()}">
 			<li><c:out value="${category.name}"></c:out></li>
 		</c:forEach>
 	</ul>
 	<hr>
-	
+
+	<%--	Form--%>
 	<form action="/products/${id}" method="post">
 		<h4>Add Category:</h4>
+
 		<select name="categoryId" id="categoryId" class="input">
-		
 			<c:forEach var="category" items="${cato}">
-			
 				<option value="${category.id}">${category.name}</option>
-				
 			</c:forEach>
 		</select> <input class="input" class="button" type="submit" value="Add" />
+
 	</form>
-	
+
+	<%--	delete--%>
 	<div class="delete">
 		<form action='/product/delete/<c:out value="${product.id}"/>'
 			method="post" class="delete">

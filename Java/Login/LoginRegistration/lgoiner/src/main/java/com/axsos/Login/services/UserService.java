@@ -52,4 +52,8 @@ public class UserService {
         }
     }
     
+    public User findUserById(Long id) {
+        Optional<User> optionalUser = userRepo.findById(id);
+        return optionalUser.orElse(null);
+    }
 }

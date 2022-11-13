@@ -9,6 +9,9 @@
 <head>
 <meta charset="windows-1256">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	<div class="container">
@@ -16,8 +19,7 @@
 		<a href="/"> Home </a>
 		<hr>
 
-		<form:form method="post" action="/addcategory"
-			modelAttribute="category">
+		<form:form method="post" action="/addcategory" modelAttribute="category">
 			<table class="table">
 				<thead>
 					<tr>
@@ -40,10 +42,9 @@
 
 			</table>
 
-			<input type="submit" value="Add Category" class="btn btn-primary"
-				class="submit" style="margin-bottom: 30px; margin-left: 30px;" />
+			<input type="submit" value="Add Category" class="btn btn-primary"/>
+		</form:form>
 	</div>
-
-	</form:form>
+	
 </body>
 </html>

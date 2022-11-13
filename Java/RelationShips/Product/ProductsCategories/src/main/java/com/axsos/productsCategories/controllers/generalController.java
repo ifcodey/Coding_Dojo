@@ -78,7 +78,7 @@ public class generalController {
 	}
 //	-----------------------------------------------
 	@GetMapping("/products/{id}")
-	public String showcat(@ModelAttribute("product") Product product,@PathVariable("id") Long id,Model model) {
+	public String showproduct(@ModelAttribute("product") Product product,@PathVariable("id") Long id,Model model) {
 		model.addAttribute("product_id", productservice.singleProduct(id));
 		
 		List<Category> cato = categoryservice.getUnassignedProducts(productservice.singleProduct(id));
@@ -107,4 +107,34 @@ public class generalController {
 		}
 	}
 	
+//	-----------------------------------------------
+	@GetMapping("/category/{id}")
+	public String showcat(@ModelAttribute("category") Category category,@PathVariable("id") Long id,Model model) {
+		model.addAttribute("category_id", categoryservice.singleCategory(id));
+		
+		List<Product> proder = productservice.getUnassignedCategories(categoryservice.singleCategory(id));
+		model.addAttribute("proder", proder);
+
+		return "showCat.jsp";
+	}
+	
+	
+	@PostMapping("/category/{id}")
+	public String addcategorypecific(@Valid @ModelAttribute("product") Product product ,BindingResult result
+			,@PathVariable("id") Long id,
+			@RequestParam (value = "productId") Long productId ) {
+		
+		if(result.hasErrors()) {
+			return "home.jsp";
+		}else {
+			Product prod = productservice.singleProduct(productId);
+			Category cats = categoryservice.singleCategory(id);
+			
+			cats.getProducts().add(prod);
+			categoryservice.saveCategory(cats);
+			
+			
+			return "redirect:/";
+		}
+	}
 }

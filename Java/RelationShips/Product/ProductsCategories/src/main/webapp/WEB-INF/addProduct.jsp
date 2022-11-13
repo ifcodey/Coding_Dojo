@@ -9,6 +9,9 @@
 <head>
 <meta charset="windows-1256">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 	<div class="container">
@@ -20,7 +23,6 @@
 			<table class="table">
 				<thead>
 					<tr>
-
 						<th scope="col"><form:label path="name"> Name:</form:label> <form:errors
 								path="name" class="error" style="color:red;" /></th>
 						<th><form:input path="name" type="text" style="width:500px; " />
@@ -40,23 +42,13 @@
 						<th><form:input path="price" type="number"
 								style="width:500px; " /></th>
 					</tr>
-
 				</thead>
 				<tbody>
-
-					<tr>
-
-					</tr>
-
-
+				<tr></tr>
 				</tbody>
-
 			</table>
-
-			<input type="submit" value="Add Product" class="btn btn-primary"
-				class="submit" style="margin-bottom: 30px; margin-left: 30px;" />
+			<input type="submit" value="Add Product" class="btn btn-primary" />
 	</div>
-
 	</form:form>
 </body>
 </html>
