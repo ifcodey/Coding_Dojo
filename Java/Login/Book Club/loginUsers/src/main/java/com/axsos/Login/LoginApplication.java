@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LgoinerApplication {
+public class LoginApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LgoinerApplication.class, args);
+		SpringApplication.run(LoginApplication.class, args);
 	}
 
 }
