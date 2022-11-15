@@ -35,8 +35,11 @@ public class MLanguage {
 	private String creator;
 
 	@NotNull(message = " - version not should be null")
-	@DecimalMin(value = "0.0", inclusive = false)
-    @Digits(integer=3, fraction=2)
+	/*
+	 * @DecimalMin(value = "0.0", inclusive = false)
+	 * 
+	 * @Digits(integer=3, fraction=2)
+	 */
 	@Min(value = 0, message = "- version should be at least 0.1")
 	private double version;
 

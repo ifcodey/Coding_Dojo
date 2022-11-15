@@ -70,7 +70,6 @@
 				type="submit" value="Delete Catergory" class="btn btn-danger">
 		</form>
 	</div>
-
 </body>
 
 

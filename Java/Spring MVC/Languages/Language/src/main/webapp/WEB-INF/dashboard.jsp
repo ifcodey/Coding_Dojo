@@ -18,7 +18,7 @@
 		<table class="table table-light">
 			<thead>
 				<tr>
-					<td>Id</td>
+					<!-- <td>Id</td> -->
 					<td>Name</td>
 					<td>Creator</td>
 					<td>Version</td>
@@ -29,7 +29,7 @@
 			<tbody>
 				<c:forEach var="expense" items="${all_language}">
 					<tr>
-						<td>${expense.id}</td>
+						<%-- <td>${expense.id}</td> --%>
 						<td><a href="/show/${expense.id}"
 							class="text-decoration-none">${expense.getName()}</a></td>
 						<td>${expense.getCreator()}</td>

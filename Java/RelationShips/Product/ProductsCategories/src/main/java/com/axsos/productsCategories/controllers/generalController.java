@@ -137,4 +137,18 @@ public class generalController {
 			return "redirect:/";
 		}
 	}
+	
+	@DeleteMapping("/category/delete/{id}")
+	public String deleteCategory(@PathVariable("id") Long id,Model model) {
+		categoryservice.deleteCategory(id);
+//		productservice.deleteProduct(id);
+		return "redirect:/home";
+	}
+	
+	@DeleteMapping("/product/delete/{id}")
+	public String deleteProduct(@PathVariable("id") Long id,Model model) {
+		productservice.deleteProduct(id);
+//		categoryservice.deleteCategory(id);
+		return "redirect:/home";
+	}
 }
