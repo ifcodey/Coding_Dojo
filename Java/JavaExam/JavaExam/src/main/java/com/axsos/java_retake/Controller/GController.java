@@ -24,7 +24,7 @@ import com.axsos.java_retake.models.Trips_Users;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-
+import java.util.List;
 @Controller
 public class GController {
 
@@ -38,7 +38,6 @@ public class GController {
     @Autowired
     private TU_Service tu_service;
 
-    ArrayList <User> x = new ArrayList<User>();
 //	-------------renderPage-------------------
 
     @GetMapping(value = {"", "/"})
@@ -174,10 +173,9 @@ public class GController {
             Long user_id = (Long) session.getAttribute("user_id");
             User thisUser = userServ.findUserById(user_id);
 
-
-//            System.out.println("++++++++++++++++++++++");
-//            System.out.println(x.toString());
-//            System.out.println("++++++++++++++++++++++");
+            Trip p = tripServ.findOneTrip(id);
+            List <User> f=p.getVistors();
+            trip.setVistors(f);
 
             trip.setUser(thisUser);
 
@@ -253,10 +251,10 @@ public class GController {
 //        x.add(tu.getId().intValue() , tu);
 
         tu_service.saveing(tu);
-        System.out.println("++++++++++++++++++++++");
+//        System.out.println("++++++++++++++++++++++");
 //        x.addAll((trip.getVistors().stream().toArray()));
-        System.out.println(x.toString());
-        System.out.println("++++++++++++++++++++++");
+//        System.out.println(x.toString());
+//        System.out.println("++++++++++++++++++++++");
 //        thisUser.setJointdate(new Date());
 
 

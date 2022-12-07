@@ -1,0 +1,216 @@
+package com.axsos.Login.controllers;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//------------------Model---------------------
+import com.axsos.Login.models.Book;
+import com.axsos.Login.models.LoginUser;
+import com.axsos.Login.models.User;
+
+//------------------Service---------------------
+import com.axsos.Login.services.UserService;
+import com.axsos.Login.services.BookService;
+
+@Controller
+public class HomeController {
+
+	@Autowired
+	private UserService userServ;
+
+	@Autowired
+	private BookService bookSer;
+//	-------------renderPageHome-------------------
+
+	@GetMapping("/")
+	public String index(Model model, HttpSession session) {
+
+		model.addAttribute("newUser", new User());
+		model.addAttribute("newLogin", new LoginUser());
+		return "login.jsp";
+	}
+
+//	-------------render and send data to home page-------------------
+	@GetMapping("/home")
+	public String home(Model model, HttpSession session) {
+		if (session.getAttribute("user_id") != null) {
+			Long user_id = (Long) session.getAttribute("user_id");
+			User thisUser = userServ.findUserById(user_id);
+
+			model.addAttribute("thisUser", thisUser);
+			model.addAttribute("all_book", bookSer.allBooks());
+			model.addAttribute("userLogin_id", user_id);
+			return "home.jsp";
+		} else {
+			return "redirect:/";
+		}
+	}
+
+//	-------------register-------------------
+
+	@PostMapping("/register")
+	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model,
+			HttpSession session) {
+		userServ.register(newUser, result);
+		if (result.hasErrors()) {
+			model.addAttribute("newLogin", new LoginUser());
+			return "login.jsp";
+		}
+		session.setAttribute("user_id", newUser.getId());
+		return "redirect:/home";
+	}
+
+//	-------------login-------------------
+
+	@PostMapping("/login")
+	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model,
+			HttpSession session) {
+		User user = userServ.login(newLogin, result);
+		if (result.hasErrors()) {
+			model.addAttribute("newUser", new User());
+			return "login.jsp";
+		}
+		session.setAttribute("user_id", user.getId());
+
+		return "redirect:/home";
+	}
+
+//	-------------logout-------------------
+
+	@GetMapping("/logout")
+	public String dashboard(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+
+//	-------------addBookPage-------------------
+
+	@GetMapping("/book/new")
+	public String runderBookPage(@ModelAttribute("book") Book book, Model model, HttpSession session) {
+		if (session.getAttribute("user_id") != null) {
+			Long user_id = (Long) session.getAttribute("user_id");
+			model.addAttribute("userLogin_id", user_id);
+			return "addBook.jsp";
+		} else {
+			return "redirect:/home";
+		}
+	}
+
+	@PostMapping("/book/new")
+	public String addBook(@Valid @ModelAttribute("book") Book book, BindingResult result) {
+		if (result.hasErrors()) {
+			return "addBook.jsp";
+		} else {
+			bookSer.createBook(book);
+			return "redirect:/home";
+		}
+	}
+
+//	-------------chooseBookPage-------------------
+
+	@GetMapping("/book/{bookId}")
+	public String runderchoosePage(Model model, @PathVariable("bookId") Long id, HttpSession session) {
+		model.addAttribute("book", bookSer.findBook(id));
+
+		Long user_id = (Long) session.getAttribute("user_id");
+		model.addAttribute("userLogin_id", user_id);
+		return "chooseBook.jsp";
+
+	}
+
+	// -------------DeleteBook-------------------
+
+	@DeleteMapping("/delete/{id}")
+	public String destroy(@PathVariable("id") Long id) {
+		bookSer.deleteBook(id);
+		return "redirect:/home";
+	}
+
+	// -------------EditBook-------------------
+
+	@GetMapping("/book/edit/{id}")
+	public String runderEditBookPage(@PathVariable("id") Long id, Model model, HttpSession session) {
+			Long user_id = (Long) session.getAttribute("user_id");
+			model.addAttribute("userLogin_id", user_id);
+		
+			Book book = bookSer.findBookQuary(id);
+			model.addAttribute("books", book);
+			
+			return "editBook.jsp";
+	}
+
+	@PutMapping("/book/edit/{id}")
+	public String EditBook(@Valid @ModelAttribute("book") Book book, BindingResult result,HttpSession session) {
+		if (result.hasErrors()) {
+			return "editBook.jsp";
+		} else {
+			Long user_id = (Long) session.getAttribute("user_id");
+			
+			User currentuser = userServ.findUserById(user_id);
+			book.setUser(currentuser);
+
+			bookSer.updateBook(book);
+			return "redirect:/home";
+		}
+	}
+	
+	// -------------Borrow Book-------------------
+	
+
+	@GetMapping("/bookmarket")
+	public String bookmarket(HttpSession session, Model model) {
+	 
+		Long userId = (Long) session.getAttribute("user_id");
+		if(userId == null) {
+			return "redirect:/logout";
+		}
+		
+		model.addAttribute("user", userServ.findUserById(userId));
+
+		List<Book> books = bookSer.unborrowerBooks(userServ.findUserById(userId));
+		model.addAttribute("unborrowedBooks", books);
+
+		List<Book> myBooks = bookSer.borrowedBooks(userServ.findUserById(userId));
+		model.addAttribute("borrowedBooks", myBooks);
+		 
+		return "bookMarket.jsp";
+	}
+	
+	@RequestMapping("/bookmarket/{bookID}")
+	public String borrowBook(@PathVariable("bookID") Long bookID, HttpSession session) {
+	 
+		Long userId = (Long) session.getAttribute("user_id");
+		if(userId == null) {
+			return "redirect:/logout";
+		}
+		
+		bookSer.addBorrower(bookSer.findBook(bookID), userServ.findUserById(userId));
+		 
+		return "redirect:/bookmarket";
+	}
+	
+	@RequestMapping("/bookmarket/return/{bookID}")
+	public String returnBook(@PathVariable("bookID") Long bookID, HttpSession session) {
+	 
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/logout";
+		}
+		bookSer.removeBorrower(bookSer.findBook(bookID));
+		 
+		return "redirect:/bookmarket";
+	}
+}

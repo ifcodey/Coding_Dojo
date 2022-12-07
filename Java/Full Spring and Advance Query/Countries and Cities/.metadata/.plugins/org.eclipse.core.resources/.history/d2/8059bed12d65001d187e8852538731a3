@@ -1,0 +1,13 @@
+package com.axsos.countriesAndCities.services;
+
+mport java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codingdojo.mvc.countriessql.reposiries.WorldRepo;
+
+@Service
+public class GeneralService {
+
+}

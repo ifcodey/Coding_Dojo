@@ -1,0 +1,5 @@
+package com.axsos.countriesAndCities.models;
+
+public class Cities {
+
+}

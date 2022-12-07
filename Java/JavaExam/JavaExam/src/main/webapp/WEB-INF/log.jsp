@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Qa3ati</title>
+    <title>Trips</title>
 
     <!-- YOUR own local CSS -->
     <link rel="stylesheet" type="text/css" href="login.css">
@@ -39,7 +39,7 @@
 <body>
 <section class="d-flex justify-content-around">
     <div class="p-3 mb-2 bg-warning text-dark w-30 P-3 my-5" id="rcorners1">
-        <h1 style="color: #9900ff;">Qa3ati</h1>
+        <h1 style="color: #9900ff;">Trips</h1>
         <form:form action="/login" method="post" modelAttribute="newLogin">
             <div class="form-group">
                 <label>Email:</label>

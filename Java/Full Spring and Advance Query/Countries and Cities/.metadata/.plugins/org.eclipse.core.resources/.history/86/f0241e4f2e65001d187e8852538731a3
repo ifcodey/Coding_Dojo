@@ -1,0 +1,23 @@
+package com.axsos.countriesAndCities.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.axsos.countriesAndCities.services.GeneralService;
+
+@RestController
+public class GController {
+
+	@Autowired
+	WorldService worldService;
+
+	@RequestMapping("/api/selvone")
+	public List<Object[]> allCountry() {
+		List<Object[]> all = worldService.allCountries();
+
+		return all;
+	}
+}

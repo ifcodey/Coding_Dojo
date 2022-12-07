@@ -1,0 +1,22 @@
+package com.axsos.Login.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.axsos.Login.models.Book;
+import com.axsos.Login.models.User;
+
+@Repository
+public interface BookRepository extends CrudRepository<Book, Long> {
+	List<Book> findAll();
+	
+	List<Book> findAllByUser(User user);
+
+    List<Book> findByBorrowNull();
+    
+    List<Book> findByBorrowNull();
+
+}

@@ -1,0 +1,111 @@
+package com.axsos.countriesAndCities.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name = "country")
+public class Countries {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
+	private Long id;
+
+	@NotNull
+	private String code;
+
+	@NotNull
+	private String name;
+
+	@NotNull
+	private String region;
+
+	@NotNull
+	private double surfaceArea;
+
+	@NotNull
+	private short indepYear;
+
+	@NotNull
+	private int population;
+
+	@NotNull
+	private double lifeExpectancy;
+
+	@NotNull
+	private double gnp;
+
+	@NotNull
+	private double gnpOld;
+
+	@NotNull
+	private enum continent{
+		Asia, Africa, NorthAmerica, SouthAmerica, Antarctica, Europe, Australia
+	};
+
+	@NotNull
+	private String localName;
+
+	@NotNull
+	private String govermentForm;
+
+	@NotNull
+	private String headOfState;
+
+	@NotNull
+	private int capital;
+
+	@NotNull
+	private String code2;
+
+	@Column(updatable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date createdAt;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updatedAt;
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
+//		--------------- Relation - Many to One -----------------
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "country_id")
+	private Countries country;
+	
+	@Column(updatable=false)
+    @OneToMany(mappedBy="country", fetch = FetchType.LAZY)
+    private List<City> cities;
+	
+	@Column(updatable=false)
+    @OneToMany(mappedBy="language", fetch = FetchType.LAZY)
+    private List<Languages> language;
+
+//		--------------- getter/setter --------------------------
+
+
+}

@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Qa3ati</title>
+    <title>Trips</title>
 
     <!-- YOUR own local CSS -->
     <link rel="stylesheet" type="text/css" href="login.css">
@@ -38,7 +38,7 @@
 <section class="d-flex justify-content-around" id="selection">
 
     <div class="p-3 mb-2 bg-warning text-dark w-45 P-5 my-5" id="rcorners1">
-        <h1 style="color:#9900ff;">Qa3ati</h1>
+        <h1 style="color:#9900ff;">Trips</h1>
         <p>Join our growing community</p>
         <form:form action="/register" method="post" modelAttribute="newUser">
             <div class="form-group">

@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Qa3ati</title>
+    <title>Detail</title>
 
     <!-- YOUR own local CSS -->
     <link rel="stylesheet" type="text/css" href="">

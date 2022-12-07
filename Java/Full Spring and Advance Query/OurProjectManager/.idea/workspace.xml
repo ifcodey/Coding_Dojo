@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07f913cd-a952-4b1d-8729-aba74c718f2f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/bookClub.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/broker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/LoginApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/controllers/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/models/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/models/LoginUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/repositories/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/services/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/java/com/axsos/Login/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/addBook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/bookMarket.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/chooseBook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/editBook.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/main/webapp/WEB-INF/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Full Spring/Book Club/bookBroker/src/test/java/com/axsos/mvc/LgoinerApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HccDnll5BRZFRodXoN44UmNY9w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Codey/OneDrive/Desktop/CodingDojo/Java/Full Spring and Advance Query/OurProjectManager&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07f913cd-a952-4b1d-8729-aba74c718f2f" name="Changes" comment="" />
+      <created>1668587695225</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668587695225</updated>
+      <workItem from="1668587696701" duration="44000" />
+      <workItem from="1668673115580" duration="14000" />
+      <workItem from="1668689494462" duration="108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

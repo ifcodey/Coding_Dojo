@@ -1,0 +1,5 @@
+package com.axsos.countriesAndCities.services;
+
+public class GeneralService {
+
+}

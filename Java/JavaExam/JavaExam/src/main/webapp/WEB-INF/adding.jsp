@@ -16,7 +16,7 @@
 <head>
     <meta charset="windows-1256">
     <!-- YOUR own local CSS -->
-    <title>Home</title>
+    <title>Adding</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script type="text/javascript" src="js/app.js"></script>
 
