@@ -10,16 +10,19 @@ const Todolist = () => {
         text: newToDoList,
         complete: false,
     }
+
+    //when submit.
     const pusherToArray = (e) => {
         e.preventDefault();
 
-        if (newToDoList.length == 0) {
+        if (newToDoList.length === 0) {
             return;
         }
         setDoList([...doList, todoitems]);
         setNewDoList("");
     }
 
+    // delete the item.
     const deleteItem = (index) => {
         const filterMyArray = doList.filter((doList, i) => {
             return i !== index;
@@ -27,8 +30,10 @@ const Todolist = () => {
         setDoList(filterMyArray);
     }
 
+    // check a clickbox.
     const check_if_clicked = (index) => {
-        const updateToDos = Todolist.map((item, i) => {
+        const updateToDos = doList.map((item, i) => {
+
             if (index === i) {
                 item.complete = !item.complete;
                 // or
@@ -54,8 +59,8 @@ const Todolist = () => {
             {doList.map((item, i) =>
 
                 <div key={i}>
-                    <input type="checkbox" checked={item.complete} onChange={(e) =>{check_if_clicked(i)} } />
-                    <span>{item.text}</span>
+                    <input type="checkbox" checked={item.complete} onChange={(e) => { check_if_clicked(i) }} />
+                    <span style={{ textDecoration: item.complete ? 'line-through' : 'none' }}> {item.text} </span>
 
                     <button onClick={(e) => {
                         deleteItem(i);
