@@ -1,3 +1,24 @@
 1- npx create-react-app your-project-name-here
 2- cd file name 
 3- npm start
+
+---------------------------------------------------------
+If some problems appear when you type ( <npm install @reach/router> ) you should type ( < npm config set legacy-peer-deps true> ) before  it.
+npm install @reach/router
+to solve a conflict to used (Link).
+============
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+============
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+============
+npm i
+============
