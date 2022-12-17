@@ -1,0 +1,3 @@
+1- npx create-react-app your-project-name-here
+2- cd file name 
+3- npm start
