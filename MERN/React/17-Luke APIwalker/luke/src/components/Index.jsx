@@ -1,11 +1,10 @@
-import React, { useState ,useEffect } from 'react';
-import axios from 'axios';
-import { Link, navigate } from '@reach/router';
+import React, { useState } from 'react';
+import { navigate } from '@reach/router';
 
 
 const Index = () => {
-    const [id, setId] = useState("");
-    const [search, setSearch] = useState("");
+    const [id, setId] = useState('1');
+    const [search, setSearch] = useState('people');
     // const [respData, setRespData] = useState([]);
     // const [loaded, setLoaded] = useState(false);
 
@@ -15,17 +14,16 @@ const Index = () => {
 
     const function_Submit = (e) => {
         e.preventDefault();
-
         // will send me to ContApi page.
         navigate("/" + search + "/" + id);
     }
 
     return (
         <div>
-            <form onSubmit={function_Submit} style={{ marginTop: "15px" }}>
+            <form action="" onSubmit={function_Submit} style={{ marginTop: "15px" }}>
 
                 <label>Search For :</label>
-                <select value={search} onChange={function_Select}>
+                <select onChange={(e) => function_Select(e)}>
                     <option value="select">select one</option>
                     <option value="people">People</option>
                     <option value="planets">Planets</option>
