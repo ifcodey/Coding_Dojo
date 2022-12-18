@@ -24,7 +24,7 @@ const Todolist = () => {
 
     // delete the item.
     const deleteItem = (index) => {
-        const filterMyArray = doList.filter((doList, i) => {
+        const filterMyArray = doList.filter((item, i) => {
             return i !== index;
         });
         setDoList(filterMyArray);
