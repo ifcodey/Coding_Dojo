@@ -1,0 +1,70 @@
+MERN PROJECT(Assuming our project is named products):
+
+In the backend:
+====================
+-mkdir products
+-cd products
+-mkdir server
+-cd server
+-npm init -y  (important before npm install to create package.json)
+-npm install express mongoose cors
+-create a file named server.js  inside the server folder 
+-Let's create our project structure by creating four more folders inside that folder called "config", "controllers", "models" and "routes". 
+-Inside the folders,create the files as in the following example---so that we have the following structure for Backend:
+         -products
+		 -Server
+			-controllers => product.controller.js  
+			-routes      => product.routes.js        
+			-config      => mongoose.config.js
+			-models      => product.model.js
+                         server.js   =>
+                         package.json
+                         package-lock.json
+
+    ** Note: You may have more than one file inside models,controllers,...  if needed.
+    ** Note2: Continue reading below to know helpful tips about what to change inside these files.
+
+In the front-end:
+====================
+-npx create-react-app client  
+-cd client
+-npm install axios @reach/router (or react-router-dom@v6.4.3) @material-ui/core (if needed)  
+-create 2 folders inside src folder (views and components)
+-inside views folder create Main.js file,Detail.js(showOne) and Update.js if necessary!==> Route related!
+-inside components folder create other components like List and Form or any necessary component!==>Non-Route related!
+
+
+Note that after creating the react app(client), the final folder structure is:
+         -products
+		 -Server
+			-controllers => product.controller.js  
+			-routes      => product.routes.js        
+			-config      => mongoose.config.js
+			-models      => product.model.js
+                	-server.js   =>
+		-client
+
+
+//////////////////////////////////////////FRONT END/////////////////////////////////////////
+-Now change the files content and add files(components) as necessary in the front END.
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////BACK END////////////////////////////////////////
+Common changes:
+-------------------
+in mongoose.config.js >> change the DB name 
+Models >>in product.model.js  change schema-name   && table fields/Attributes  //also the schema name in export
+controllers >>CRUD methods
+routes>> urls and their corresponding methods' names in the controller
+server.js=>
+Note: DO any other modification required if needed
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////Run BOTH the FE/BE servers//////////////////////
+For Backend-go to the project directory(cd server):     nodemon server.js 
+For FE:    -the front end directory(cd client):    	  npm run start
+////////////////////////////////////////////////////////////////////////////////////////////
