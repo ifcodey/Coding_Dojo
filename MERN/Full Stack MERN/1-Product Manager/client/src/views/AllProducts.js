@@ -23,6 +23,7 @@ const AllProducts = (props) => {
       {props.allproducts.map((product, i) => (
         <p key={i}>
           <Link to={"/products/" + product._id}>{product.title}</Link>
+          
           &nbsp;&nbsp;
           <button
             onClick={(e) => {

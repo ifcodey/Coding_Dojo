@@ -1,15 +1,50 @@
-import Main from './views/Main'
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import './App.css';
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Main from "./views/Main";
+import Create from "./views/Create";
+import Update from "./views/Update";
+import "./App.css";
 
 function App() {
+  const [authors, setAuthors] = useState([]);
+  const [errors, setErrors] = useState([]);
+  
   return (
-    <Routes>
-    <Route path="/" element={<Main />} />
-    <Route path="/products/:id" element={<Product />} />
-    <Route path="/products/:id/edit" element={<UpdateProduct />} />
-  </Routes>
+    <>
+      <Routes>
+        {/* -------Main--------- */}
+        <Route
+          path="/*"
+          element={<Main authors={authors} setAuthors={setAuthors} />}
+        />
+
+        {/* -------AddAuthor--------- */}
+        <Route
+          path="/authors/:id"
+          element={
+            <Create
+              authors={authors}
+              setAuthors={setAuthors}
+              errors={errors}
+              setErrors={setErrors}
+            />
+          }
+        />
+
+        {/* --------UpdateAuthor-------- */}
+        <Route
+          path="/authors/:id/edit"
+          element={
+            <Update
+              authors={authors}
+              setAuthors={setAuthors}
+              errors={errors}
+              setErrors={setErrors}
+            />
+          }
+        />
+      </Routes>
+    </>
   );
 }
 

@@ -1,24 +1,50 @@
-import React, { useState } from 'react'
-import { Router } from 'react-router-dom';
-import FormAuthor from '../components/FormAuthor'
+import React, { useEffect, useState } from "react";
+import { Router, Link } from "react-router-dom";
+import axios from "axios";
+import Authors from "../components/Authors";
+import Button from "@mui/material/Button";
 
-const Main = () => {
-    const [name , setName] = useState("");
-    const [names , setNames] = useState([]);
-    const [error , setError] = useState([]);
+const Main = (props) => {
+  const [loaded, setLoaded] = useState(false);
+  const { authors, setAuthors } = props;
 
-    const onSubmitProp  = (content) =>{
-        axios.post()
-    }
+  // Delete from DOM.
+  const removeFromDom = (id) => {
+    setAuthors(authors.filter((author) => author._id !== id));
+  };
 
-    return (
-        <div>
-            <Router>
-                <TableAuthors path="/" />
-                <FormAuthor  onSubmitProp = {onSubmitProp} setName={setName} setNames={setNames} path="/new" />
-            </Router>
-        </div>
-    )
-}
+  // Get all Author
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/authors")
+      .then((res) => {
+        setAuthors(res.data);
+        setLoaded(true);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-export default Main
+  return (
+    <div>
+      {/* go to create form */}
+      <Link to="/authors/new">
+        <Button variant="outlined" color="primary" disableElevation>
+          Add new author
+        </Button>
+      </Link>
+
+      {/* view a author name */}
+      <h4>We have a qoutes by :</h4>
+      {loaded && (
+        <Authors
+          authors={authors}
+          setAuthors={setAuthors}
+          removeFromDom={removeFromDom}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Main;
