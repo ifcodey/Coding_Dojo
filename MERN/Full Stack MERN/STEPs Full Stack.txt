@@ -29,6 +29,9 @@ In the front-end:
 -npx create-react-app client  
 -cd client
 -npm install axios @reach/router (or react-router-dom@v6.4.3) @material-ui/core (if needed)  
+
+>>>  npm install @mui/material @emotion/react @emotion/styled
+
 -create 2 folders inside src folder (views and components)
 -inside views folder create Main.js file,Detail.js(showOne) and Update.js if necessary!==> Route related!
 -inside components folder create other components like List and Form or any necessary component!==>Non-Route related!
