@@ -1,0 +1,22 @@
+mkdir myNewProject
+cd myNewProject
+
+-----------------------------
+
+npm init -y
+npm install express
+npm install mongoose
+copy nul server.js
+
+-----------------------------
+npx create-react-app client
+in client file ->
+npm install axios
+
+-----------------------------
+
+for backend connect with react -> at file project dir.
+npm install cors
+
+in client file ->
+npm run start

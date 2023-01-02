@@ -28,6 +28,7 @@ In the front-end:
 ====================
 -npx create-react-app client  
 -cd client
+-npm install axios react-router-dom@v6.4.3 @material-ui/core
 -npm install axios @reach/router (or react-router-dom@v6.4.3) @material-ui/core (if needed)  
 
 >>>  npm install @mui/material @emotion/react @emotion/styled
