@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React from "react";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <Routes>
-        <Route>
-
-        </Route>
-      </Routes>
+      <h1>App</h1>
     </div>
   );
-}
+};
 
 export default App;

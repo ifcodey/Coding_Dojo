@@ -1,11 +1,4 @@
 const { Teams } = require("../models/TM.model");
-// const { request, response } = require("express");
-
-// module.exports.index = (req, res) => {
-//   response.json({
-//     message: "Hello World ,Backend is Running",
-//   });
-// };
 
 module.exports.findAllTeams = (req, res) => {
   console.log(Teams);
